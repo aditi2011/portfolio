@@ -1,0 +1,141 @@
+.swc-work-section {
+  min-height: 100vh;
+  background: #060010;
+  position: relative;
+  overflow: hidden;
+}
+
+.swc-work-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.swc-work-container {
+  max-width: 70rem;
+  margin: 7.62rem auto;
+  position: relative;
+  z-index: 1;
+}
+
+.swc-work-section-description {
+    width: 70%;
+    display: flex;
+}
+
+
+.swc-work-section-description p{
+    color: #FFF;
+    font-family: Figtree;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.hover-image-reveal-header {
+    color: #FFF;
+    font-family: Figtree;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 7.81rem;
+}
+
+.section-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, #4CAF50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.section-footer {
+  text-align: center;
+  margin-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.footer-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+  opacity: 0.8;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 3rem;
+  }
+  
+  .footer-title {
+    font-size: 2rem;
+  }
+  
+  .swc-work-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .footer-title {
+    font-size: 1.5rem;
+  }
+  
+  .swc-work-container {
+    padding: 0 1rem;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .section-footer {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .footer-title {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  
+  .padding-large {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}

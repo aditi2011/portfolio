@@ -79,10 +79,10 @@ const MyWork = () => {
         <GridLines className="grid-lines" lineColor="rgba(255, 255, 255, 0.1)" cellWidth={74} cellHeight={74}>
         </GridLines>
         <ScrollVelocity
-          texts={['My Work \u00A0\u00A0- \u00A0']} 
+          texts={['MY PROJECTS \u00A0\u00A0- \u00A0']} 
           velocity={200}
           stiffness={500}
-          numCopies={20}
+          numCopies={6}
           className="custom-scroll-text"
         />
         <div className="work-container">
@@ -116,7 +116,7 @@ const MyWork = () => {
         {/* </GridLines> */}
       </section>
 
-      <section className="mentor-section" id="mentor-work">
+      {/* <section className="mentor-section" id="mentor-work">
         <ScrollVelocity
           texts={['Mentor Work \u00A0\u00A0- \u00A0']} 
           velocity={200}
@@ -128,9 +128,6 @@ const MyWork = () => {
           <p className="mentor-intro">
             As the Product Design Lead at Students' Web Committee (SWC) at IITG I had the opportunity to mentor 7+ projects. Most of which have a user base of 10k+ students
           </p>
-{/*           
-          <h2 className="selected-work-title">Selected Work</h2>
-           */}
           <div className="mentor-grid">
             {mentorWorkProjects.map((project) => (
               <div key={project.id} className="mentor-card">
@@ -145,7 +142,7 @@ const MyWork = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

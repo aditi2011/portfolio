@@ -1,0 +1,218 @@
+.hover-image-reveal-container {
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+}
+
+.menu-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-item {
+  position: relative;
+  color: #FFF;
+  padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.menu-item:hover {
+  background: #E8E0FF;
+  color: #060010;
+}
+
+.menu-item.hovered {
+  background: #E8E0FF;
+  color: #060010;
+}
+
+/* .menu-item:not(.hovered) {
+  transition: opacity 0.3s ease;
+} */
+
+/* .menu-item.hovered ~ .menu-item:not(.hovered) {
+  opacity: 0.3;
+} */
+
+.menu-item-content {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  gap: 0rem;
+}
+
+.menu-item-index-div{
+    display: flex;
+    align-items: center;
+    font-family: Figtree;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.menu-item-title {
+    font-family: Figtree;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transition: color 0.3s ease;
+}
+
+.menu-item-left-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-item-right-div {
+    width: 18.125rem;
+}
+
+/* .menu-item:hover .menu-item-title {
+  color: #4CAF50;
+} */
+
+.menu-item-description {
+  display: flex;
+  flex-direction: column;
+    font-family: Figtree;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  /* gap: 0.5rem; */
+}
+
+/* .description-line {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+} */
+
+
+.menu-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  /* opacity: 0; */
+  /* transform: translateY(20px); */
+  /* transition: all 0.3s ease 0.2s; */
+}
+
+/* .menu-item:hover .menu-item-tags {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+.hovered .tag:first-child {
+    background: #2D00B4;
+    color: #E8E0FF;
+    font-family: Figtree;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.hovered .tag:not(:first-child) {
+    background: #637AFF;
+    color: #E8E0FF;
+    font-family: Figtree;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+
+.tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    background: #222;
+    color: #FFF;
+    font-family: Figtree;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+}
+
+.hover-image {
+  position: absolute;
+  /* center the image */
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) scale(0.85) rotate(-3deg) translateX(-50%);
+  width: 320px;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  animation: imageReveal 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 10px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+}
+
+@keyframes imageReveal {
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1) rotate(0deg) translateX(-50%);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hover-image-reveal-container {
+    padding: 1rem;
+  }
+  
+  .menu-item-title {
+    font-size: 2rem;
+  }
+  
+  .hover-image {
+    width: 250px;
+    height: 150px;
+  }
+  
+  .menu-item:hover {
+    transform: translateX(10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-item-title {
+    font-size: 1.5rem;
+  }
+  
+  .hover-image {
+    display: none; /* Hide images on mobile for better UX */
+  }
+}

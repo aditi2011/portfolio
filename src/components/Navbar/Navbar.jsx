@@ -2,6 +2,7 @@ import GlassSurface from '../backgrounds/GlassSurface/GlassSurface';
 import { Link } from 'react-scroll';
 import { useState, useEffect } from 'react';
 import './Navbar.css';
+import { max } from 'three/tsl';
 
 // Custom duration function based on scroll distance
 const getScrollDuration = (targetElement) => {
@@ -46,7 +47,7 @@ export default function Navbar() {
     return (
         <div className='navbar'>
             <GlassSurface 
-                width={'60%'} 
+                width={'45%'} 
                 height={'2.5rem'}
                 brightness={0.9}
                 // blur={'20px'}
@@ -58,6 +59,7 @@ export default function Navbar() {
                 className={`glass-surface-navbar-container ${isInMentorSection ? 'dark-mode' : ''}`}
                 style={{
                     // border: '1px solid rgba(255, 255, 255, 0.20)',
+                    maxWidth: '900px',
                     margin: 'auto',
                     backgroundColor: isInMentorSection ? 'rgba(255, 255, 255, 0)' : 'rgba(0, 0, 0, 0)',
                     backdropFilter: 'blur(10px)',
@@ -85,7 +87,7 @@ export default function Navbar() {
                                         to="my-work" 
                                         smooth={true} 
                                         duration={() => getScrollDuration(document.getElementById('my-work'))} 
-                                        offset={100}
+                                        offset={130}
                                         spy={true}
                                         activeClass="active"
                                         className={`navbar-text ${isInMentorSection ? 'dark-text' : ''}`}
@@ -97,7 +99,7 @@ export default function Navbar() {
                         </div>
                         <div className='navbar-item-right'>
                             <ul>
-                                <li className='navbar-item'><span className={`navbar-text ${isInMentorSection ? 'dark-text' : ''}`}>About Me</span></li>
+                                {/* <li className='navbar-item'><span className={`navbar-text ${isInMentorSection ? 'dark-text' : ''}`}>About Me</span></li> */}
                                 <li className='navbar-item'
                                     style={{
                                         paddingRight: '0',
