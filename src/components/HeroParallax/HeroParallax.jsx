@@ -1,5 +1,6 @@
 import React from "react"
 import { motion, useScroll, useSpring, useTransform } from "framer-motion"
+import TextType from "../effects/TextType"
 import ScrollVelocity from "../effects/ScrollVelocity"
 import "./HeroParallax.css"
 
@@ -19,7 +20,7 @@ export function HeroParallax({ products }) {
   const translateX = useSpring(useTransform(scrollYProgress, [0, 1], [0, 1000]), springConfig)
   const translateXReverse = useSpring(useTransform(scrollYProgress, [0, 1], [0, -1000]), springConfig)
   const rotateX = useSpring(useTransform(scrollYProgress, [0, 0.2], [15, 0]), springConfig)
-  const opacity = useSpring(useTransform(scrollYProgress, [0, 0.2], [0.2, 1]), springConfig)
+  const opacity = useSpring(useTransform(scrollYProgress, [0, 0.4], [0.1, 1]), springConfig)
   const rotateZ = useSpring(useTransform(scrollYProgress, [0, 0.2], [20, 0]), springConfig)
   const translateY = useSpring(useTransform(scrollYProgress, [0, 0.2], [-700, 500]), springConfig)
 
@@ -43,7 +44,7 @@ export function HeroParallax({ products }) {
           texts={['MY PROJECTS \u00A0\u00A0- \u00A0']} 
           velocity={200}
           stiffness={500}
-          numCopies={6}
+          numCopies={5}
           className="custom-scroll-text"
         />
 
@@ -61,11 +62,21 @@ function Header() {
   return (
     <div className="hero-header">
       <h1 className="hero-title">
-        The Ultimate <br /> development studio
+        Hi! I'm Aditi.
       </h1>
       <p className="hero-subtitle">
-        We build beautiful products with the latest technologies and frameworks. We are a team of passionate developers
-        and designers that love to build amazing products.
+        I like to keep my work <TextType
+                text={['simple.', 'a lil quirky ;).', 'elegant.']}
+                typingSpeed={75}
+                deletingSpeed={50}
+                pauseDuration={1000}
+                className="home-subtitle-changing-text"
+                cursorClassName="home-subtitle-cursor"
+                cursorCharacter="|"
+                showCursor={true}
+                hideCursorWhileTyping={false}
+                startOnVisible={true}
+            />
       </p>
     </div>
   )
@@ -73,7 +84,7 @@ function Header() {
 
 function ProductCard({ product, translate }) {
   return (
-    <motion.div style={{ x: translate }} whileHover={{ y: -20 }} className="product-card">
+    <motion.div style={{ x: translate }} whileHover={{ y: 0 }} className="product-card">
       <a href={product.link} className="product-link" target="_blank" rel="noreferrer">
         <img
           src={product.thumbnail || "/placeholder.svg"}

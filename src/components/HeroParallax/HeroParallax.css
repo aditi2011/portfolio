@@ -1,15 +1,15 @@
 :root {
   --max-content-width: 80rem;
   --page-padding-x: 1rem;
-  --page-padding-y: 10rem;
-  --gap: 0rem;
+  --page-padding-y: 50vh;
+  --gap: 3rem;
   --card-width: 30rem;
   --card-height: 24rem;
   --radius: 0.5rem;
   --header-title-size-mobile: 2rem;
   --header-title-size-desktop: 4.5rem;
   --header-subtitle-size-mobile: 1rem;
-  --header-subtitle-size-desktop: 1.25rem;
+  --header-subtitle-size-desktop: 1.5rem;
   --bg: rgb(6, 0, 16);
   --fg: #ffffff;
   --muted: #d4d4d8;
@@ -17,7 +17,7 @@
 }
 
 .hero-parallax {
-  height: 125rem;
+  height: 140rem;
   padding: var(--page-padding-y) 0;
   overflow: hidden;
   position: relative;
@@ -40,18 +40,27 @@
 }
 
 .hero-title {
-  font-weight: 800;
-  line-height: 1.1;
   margin: 0;
-  font-size: var(--header-title-size-mobile);
+  /* font-size: var(--header-title-size-mobile); */
+  /* text-align: center; */
+    font-family: Figtree;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .hero-subtitle {
-  margin-top: 2rem;
-  max-width: 40rem;
-  color: var(--muted);
-  font-size: var(--header-subtitle-size-mobile);
-  line-height: 1.6;
+  /* margin-top: 2rem;
+  max-width: 40rem; */
+  /* font-size: var(--header-subtitle-size-mobile); */
+  color: #FFF;
+    font-family: Figtree;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.06rem;
 }
 
 @media (min-width: 768px) {
@@ -82,13 +91,13 @@
   flex: 0 0 auto;
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  /* box-shadow: 0 0 0 rgba(0, 0, 0, 0); */
   transition: box-shadow 200ms ease;
 }
 
-.product-card:hover {
+/* .product-card:hover {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-}
+} */
 
 .product-link {
   display: block;
@@ -115,9 +124,9 @@
   transition: opacity 200ms ease;
 }
 
-.product-card:hover .product-overlay {
+/* .product-card:hover .product-overlay {
   opacity: 0.8;
-}
+} */
 
 .product-title {
   position: absolute;
@@ -129,6 +138,6 @@
   transition: opacity 200ms ease;
 }
 
-.product-card:hover .product-title {
+/* .product-card:hover .product-title {
   opacity: 1;
-}
+} */

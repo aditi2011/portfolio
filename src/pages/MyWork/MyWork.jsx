@@ -76,8 +76,8 @@ const MyWork = () => {
     <div className="my-work" id="my-work">
       
       <section className="work-section">
-        <GridLines className="grid-lines" lineColor="rgba(255, 255, 255, 0.1)" cellWidth={74} cellHeight={74}>
-        </GridLines>
+        {/* <GridLines className="grid-lines" lineColor="rgba(255, 255, 255, 0.1)" cellWidth={74} cellHeight={74}>
+        </GridLines> */}
         {/* <ScrollVelocity
           texts={['MY PROJECTS \u00A0\u00A0- \u00A0']} 
           velocity={200}

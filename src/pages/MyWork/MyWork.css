@@ -38,7 +38,7 @@
 
 /* My Work Section */
 .work-section {
-    /* background-color: #060010; */
+    background-color: #060010;
     /* padding: 6rem 15.63rem; */
     padding-bottom: 6rem;
 }
@@ -46,7 +46,7 @@
 .work-container {
     /* max-width: 100%; */
     max-width: 70rem;
-    margin: 2rem auto;
+    margin: 0rem auto;
     display: flex;
     flex-direction: column;
     padding-top: 6.19rem;
