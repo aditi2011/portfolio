@@ -173,9 +173,9 @@
   z-index: 10;
   opacity: 0;
   animation: imageReveal 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-  box-shadow: 
+  /* box-shadow: 
     0 25px 50px rgba(0, 0, 0, 0.4),
-    0 10px 20px rgba(0, 0, 0, 0.2);
+    0 10px 20px rgba(0, 0, 0, 0.2); */
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(1px);
 }
