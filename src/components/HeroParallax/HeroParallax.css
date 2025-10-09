@@ -2,7 +2,7 @@
   --max-content-width: 80rem;
   --page-padding-x: 1rem;
   --page-padding-y: 10rem;
-  --gap: 5rem;
+  --gap: 0rem;
   --card-width: 30rem;
   --card-height: 24rem;
   --radius: 0.5rem;
@@ -17,7 +17,7 @@
 }
 
 .hero-parallax {
-  height: 240vh;
+  height: 125rem;
   padding: var(--page-padding-y) 0;
   overflow: hidden;
   position: relative;

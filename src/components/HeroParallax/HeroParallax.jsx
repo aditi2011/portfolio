@@ -1,5 +1,6 @@
 import React from "react"
 import { motion, useScroll, useSpring, useTransform } from "framer-motion"
+import ScrollVelocity from "../effects/ScrollVelocity"
 import "./HeroParallax.css"
 
 export function HeroParallax({ products }) {
@@ -37,6 +38,14 @@ export function HeroParallax({ products }) {
             <ProductCard product={product} translate={translateXReverse} key={product.title} />
           ))}
         </motion.div>
+
+        <ScrollVelocity
+          texts={['MY PROJECTS \u00A0\u00A0- \u00A0']} 
+          velocity={200}
+          stiffness={500}
+          numCopies={6}
+          className="custom-scroll-text"
+        />
 
         {/* <motion.div className="row row-reverse">
           {thirdRow.map((product) => (

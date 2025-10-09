@@ -78,13 +78,13 @@ const MyWork = () => {
       <section className="work-section">
         <GridLines className="grid-lines" lineColor="rgba(255, 255, 255, 0.1)" cellWidth={74} cellHeight={74}>
         </GridLines>
-        <ScrollVelocity
+        {/* <ScrollVelocity
           texts={['MY PROJECTS \u00A0\u00A0- \u00A0']} 
           velocity={200}
           stiffness={500}
           numCopies={6}
           className="custom-scroll-text"
-        />
+        /> */}
         <div className="work-container">
           {myWorkProjects.map((project) => (
             <div 
