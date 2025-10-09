@@ -17,7 +17,7 @@
 }
 
 .hero-parallax {
-  height: 300vh;
+  height: 240vh;
   padding: var(--page-padding-y) 0;
   overflow: hidden;
   position: relative;

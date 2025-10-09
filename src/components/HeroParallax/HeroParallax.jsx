@@ -38,11 +38,11 @@ export function HeroParallax({ products }) {
           ))}
         </motion.div>
 
-        <motion.div className="row row-reverse">
+        {/* <motion.div className="row row-reverse">
           {thirdRow.map((product) => (
             <ProductCard product={product} translate={translateX} key={product.title} />
           ))}
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </div>
   )
