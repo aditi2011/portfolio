@@ -1,0 +1,134 @@
+:root {
+  --max-content-width: 80rem;
+  --page-padding-x: 1rem;
+  --page-padding-y: 10rem;
+  --gap: 5rem;
+  --card-width: 30rem;
+  --card-height: 24rem;
+  --radius: 0.5rem;
+  --header-title-size-mobile: 2rem;
+  --header-title-size-desktop: 4.5rem;
+  --header-subtitle-size-mobile: 1rem;
+  --header-subtitle-size-desktop: 1.25rem;
+  --bg: rgb(6, 0, 16);
+  --fg: #ffffff;
+  --muted: #d4d4d8;
+  --overlay: rgba(6, 0, 16, 0.8);
+}
+
+.hero-parallax {
+  height: 300vh;
+  padding: var(--page-padding-y) 0;
+  overflow: hidden;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.hero-stage {
+  will-change: transform, opacity;
+}
+
+.hero-header {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 5rem var(--page-padding-x);
+}
+
+.hero-title {
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  font-size: var(--header-title-size-mobile);
+}
+
+.hero-subtitle {
+  margin-top: 2rem;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: var(--header-subtitle-size-mobile);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: var(--header-title-size-desktop);
+  }
+  .hero-subtitle {
+    font-size: var(--header-subtitle-size-desktop);
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+  padding: 0 var(--page-padding-x);
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.product-card {
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  flex: 0 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: box-shadow 200ms ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.product-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.product-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+}
+
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.product-card:hover .product-overlay {
+  opacity: 0.8;
+}
+
+.product-title {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  margin: 0;
+  font-size: 1.125rem;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.product-card:hover .product-title {
+  opacity: 1;
+}

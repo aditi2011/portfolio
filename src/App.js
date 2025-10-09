@@ -1,4 +1,4 @@
-import Home from './pages/Home/Home';
+import Home from './pages/Home2/Home';
 import Navbar from './components/Navbar/Navbar';
 import MyWork from './pages/MyWork/MyWork';
 import SWCWork from './pages/SWCWork/SWCWork';
