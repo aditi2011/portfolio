@@ -163,8 +163,8 @@
   left: 50%;
   top: 50%;
   transform: translateY(-50%) scale(0.85) rotate(-3deg) translateX(-50%);
-  width: 320px;
-  height: 500px;
+  width: 300px;
+  height: 400px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
