@@ -86,7 +86,7 @@
 
 .product-card {
   position: relative;
-  width: var(--card-width);
+  width: auto;
   height: var(--card-height);
   flex: 0 0 auto;
   border-radius: var(--radius);
@@ -106,13 +106,12 @@
 }
 
 .product-image {
-  position: absolute;
-  inset: 0;
+  position: relative;
   display: block;
-  width: 100%;
+  width: auto;
   height: 100%;
-  object-fit: cover;
-  object-position: left top;
+  object-fit: contain;
+  object-position: center;
 }
 
 .product-overlay {
