@@ -2,9 +2,11 @@ import ScrollVelocity from '../../components/effects/ScrollVelocity';
 import GridLines from 'react-gridlines';
 import './MyWork.css';
 import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const MyWork = () => {
   const projectRefs = useRef([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observers = projectRefs.current.map((ref, index) => {
@@ -35,6 +37,12 @@ const MyWork = () => {
       observers.forEach((observer) => observer.disconnect());
     };
   }, []);
+
+  const handleProjectClick = (caseStudyId) => {
+    if (caseStudyId) {
+      navigate(`/case-study/${caseStudyId}`);
+    }
+  };
 
   const myWorkProjects = [
     {
@@ -68,7 +76,8 @@ const MyWork = () => {
         'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
       ],
       gradient: 'linear-gradient(135deg, #36238E 0%, #936DC8 33%, #C2B5FF 66%, #BED836 100%)',
-      imagePosition: 'left'
+      imagePosition: 'left',
+      caseStudyId: 'hygo'
     },
     {
       id: 4,
@@ -123,7 +132,8 @@ const MyWork = () => {
             <div 
               key={project.id}
               ref={(el) => (projectRefs.current[index] = el)}
-              className={`project-card ${project.imagePosition === 'right' ? 'reverse' : ''}`}
+              className={`project-card ${project.imagePosition === 'right' ? 'reverse' : ''} ${project.caseStudyId ? 'clickable' : ''}`}
+              onClick={() => handleProjectClick(project.caseStudyId)}
             >
               <div className="project-image">
                 {project.image ? (

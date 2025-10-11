@@ -69,6 +69,31 @@
     transform: translateY(0);
 }
 
+.project-card.clickable {
+    cursor: pointer;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, all 0.3s ease;
+}
+
+.project-card.clickable:hover {
+    transform: translateY(-8px);
+}
+
+.project-card.clickable:hover .project-image {
+    box-shadow: 0 15px 50px rgba(147, 109, 200, 0.4);
+}
+
+.project-card.clickable .project-header h3::after {
+    content: ' →';
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.project-card.clickable:hover .project-header h3::after {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
 .project-card.reverse {
     grid-template-columns: repeat(12, 1fr);
 }
