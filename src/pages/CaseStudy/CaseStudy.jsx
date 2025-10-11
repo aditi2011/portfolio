@@ -1,7 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import hygoImage from '../../assets/case_studies/hygo_2x.png';
+import collegeCupidImage from '../../assets/case_studies/cupid_2x.png';
 import './CaseStudy.css';
+
+// Case study data mapping
+const caseStudies = {
+  'hygo': {
+    title: 'Hygo',
+    image: hygoImage,
+    description: 'Hygo Case Study'
+  },
+  'college-cupid': {
+    title: 'College Cupid',
+    image: collegeCupidImage,
+    description: 'College Cupid Case Study'
+  }
+};
 
 const CaseStudy = () => {
   const [loading, setLoading] = useState(true);
@@ -9,10 +24,19 @@ const CaseStudy = () => {
   const navigate = useNavigate();
   const { projectId } = useParams();
 
+  // Get the current case study data
+  const currentCaseStudy = caseStudies[projectId];
+
   useEffect(() => {
+    // Redirect if invalid project ID
+    if (!currentCaseStudy) {
+      navigate('/');
+      return;
+    }
+
     // Preload the image
     const img = new Image();
-    img.src = hygoImage;
+    img.src = currentCaseStudy.image;
     img.onload = () => {
       setImageLoaded(true);
     };
@@ -25,7 +49,7 @@ const CaseStudy = () => {
     }, 1500);
 
     return () => clearTimeout(timer);
-  }, [imageLoaded]);
+  }, [imageLoaded, currentCaseStudy, navigate]);
 
   useEffect(() => {
     if (imageLoaded && loading) {
@@ -40,13 +64,18 @@ const CaseStudy = () => {
     navigate('/');
   };
 
+  // Don't render if invalid case study
+  if (!currentCaseStudy) {
+    return null;
+  }
+
   return (
     <div className="case-study-container">
       {loading ? (
         <div className="loading-screen">
           <div className="loading-content">
             <div className="spinner"></div>
-            <h2>Loading Case Study...</h2>
+            <h2>Loading {currentCaseStudy.title}...</h2>
           </div>
         </div>
       ) : (
@@ -57,7 +86,7 @@ const CaseStudy = () => {
             </svg>
           </button>
           <div className="image-container">
-            <img src={hygoImage} alt="Hygo Case Study" />
+            <img src={currentCaseStudy.image} alt={currentCaseStudy.description} />
           </div>
         </div>
       )}

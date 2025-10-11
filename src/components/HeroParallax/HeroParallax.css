@@ -10,21 +10,36 @@
   --header-title-size-desktop: 4.5rem;
   --header-subtitle-size-mobile: 1rem;
   --header-subtitle-size-desktop: 1.5rem;
-  --bg: rgb(6, 0, 16);
-  --fg: #ffffff;
+  --bg: rgba(6, 0, 16);
+  --fg: #f4f4f4;
   --muted: #d4d4d8;
   --overlay: rgba(6, 0, 16, 0.8);
 }
 
 .hero-parallax {
-  height: 140rem;
-  padding: var(--page-padding-y) 0;
+  height: fit-content;
+  padding: var(--page-padding-y) 0 12rem 0;
   overflow: hidden;
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
   background: var(--bg);
   color: var(--fg);
+}
+
+/* Reduce height for mobile devices */
+@media (max-width: 767px) {
+  .hero-parallax {
+    height: fit-content;
+  }
+}
+
+/* Adjust height for tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-parallax {
+    /* height: 110rem; */
+    height: fit-content;
+  }
 }
 
 .hero-stage {
@@ -37,10 +52,11 @@
   max-width: var(--max-content-width);
   margin: 0 auto;
   padding: 5rem var(--page-padding-x);
+  color: var(--fg);
 }
 
 .hero-title {
-  margin: 0;
+  margin: 0 0 2rem 0;
   /* font-size: var(--header-title-size-mobile); */
   /* text-align: center; */
     font-family: Figtree;
@@ -50,20 +66,82 @@
     line-height: normal;
 }
 
+.hero-title-greeting {
+  display: inline;
+}
+
+.hero-title-name {
+  display: inline;
+}
+
+/* Move "I'm Aditi" to next line on smaller screens */
+@media (max-width: 767px) {
+  .hero-title-name {
+    display: block;
+  }
+  
+  .hero-header {
+    position: absolute;
+    top: 55vh;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
 .hero-subtitle {
   /* margin-top: 2rem;
   max-width: 40rem; */
   /* font-size: var(--header-subtitle-size-mobile); */
-  color: #FFF;
+  color: var(--fg);
     font-family: Figtree;
     font-size: 2rem;
     font-style: normal;
     font-weight: 600;
-    line-height: normal;
+    line-height: 1;
     letter-spacing: 0.06rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    row-gap: 0.1rem;
 }
 
-@media (min-width: 768px) {
+/* Force TextType to next line on smaller screens */
+@media (max-width: 767px) {
+  .hero-subtitle .home-subtitle-changing-text {
+    flex-basis: 100%;
+  }
+}
+
+/* Tablet breakpoints */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-header {
+    padding: 4rem 2rem;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.75rem;
+  }
+  
+  .row {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1025px) {
   .hero-title {
     font-size: var(--header-title-size-desktop);
   }

@@ -9,32 +9,51 @@ const MyWork = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const observers = projectRefs.current.map((ref, index) => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setTimeout(() => {
-                entry.target.classList.add('reveal');
-              }, index * 150); // Stagger the animations
-            }
-          });
-        },
-        {
-          threshold: 0.2,
-          rootMargin: '0px 0px -100px 0px'
-        }
-      );
+    const handleScroll = () => {
+      projectRefs.current.forEach((ref, index) => {
+        if (!ref) return;
 
-      if (ref) {
-        observer.observe(ref);
+        const rect = ref.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Calculate scroll progress (0 to 1) as element moves through viewport
+        const elementMiddle = rect.top + rect.height / 2;
+        const screenMiddle = windowHeight / 2;
+        const distance = elementMiddle - screenMiddle;
+        
+        // Same parallax speed for all cards (downward movement like College Cupid)
+        const parallaxSpeed = 0.4;
+        const translateY = distance * parallaxSpeed;
+        
+        // Add subtle scale for depth
+        const scale = 1 + Math.abs(distance) / windowHeight * 0.05;
+        const finalScale = Math.min(scale, 1.05);
+        
+        // Apply parallax transform without opacity fade
+        ref.style.transform = `translateY(${translateY}px) scale(${finalScale})`;
+        ref.style.opacity = '1';
+      });
+    };
+
+    // Initial call
+    handleScroll();
+    
+    // Add scroll listener with throttling for performance
+    let ticking = false;
+    const scrollListener = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      return observer;
-    });
+    };
+    
+    window.addEventListener('scroll', scrollListener, { passive: true });
 
     return () => {
-      observers.forEach((observer) => observer.disconnect());
+      window.removeEventListener('scroll', scrollListener);
     };
   }, []);
 
@@ -47,7 +66,7 @@ const MyWork = () => {
   const myWorkProjects = [
     {
       id: 1,
-      title: 'Staged - App Design',
+      title: 'Staged',
       description: 'An app for managers and artists to seamlessly book gigs.',
       details: [
         'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
@@ -58,18 +77,19 @@ const MyWork = () => {
     },
     {
       id: 2,
-      title: 'College Cupid - App Design',
+      title: 'College Cupid',
       description: 'An app for managers and artists to seamlessly book gigs through.',
       details: [
         'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
         'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
       ],
       image: 'https://api.builder.io/api/v1/image/assets/TEMP/d99d94e70887ed052f714946c825424758644ebf?width=1150',
-      imagePosition: 'right'
+      imagePosition: 'right',
+      caseStudyId: 'college-cupid'
     },
     {
       id: 3,
-      title: 'Hygo - Website Design',
+      title: 'Hygo',
       description: 'An app for managers and artists to seamlessly book gigs through.',
       details: [
         'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
@@ -81,7 +101,7 @@ const MyWork = () => {
     },
     {
       id: 4,
-      title: 'RareLink - App Design',
+      title: 'RareLink',
       subtitle: '(Ongoing)',
       description: 'An app for managers and artists to seamlessly book gigs through.',
       details: [

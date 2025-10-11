@@ -22,7 +22,7 @@ export function HeroParallax({ products }) {
   const rotateX = useSpring(useTransform(scrollYProgress, [0, 0.2], [15, 0]), springConfig)
   const opacity = useSpring(useTransform(scrollYProgress, [0, 0.4], [0.1, 1]), springConfig)
   const rotateZ = useSpring(useTransform(scrollYProgress, [0, 0.2], [20, 0]), springConfig)
-  const translateY = useSpring(useTransform(scrollYProgress, [0, 0.2], [-700, 500]), springConfig)
+  const translateY = useSpring(useTransform(scrollYProgress, [0, 0.2], [-700, 200]), springConfig)
 
   return (
     <div ref={ref} className="hero-parallax">
@@ -62,11 +62,11 @@ function Header() {
   return (
     <div className="hero-header">
       <h1 className="hero-title">
-        Hi! I'm Aditi.
+        <span className="hero-title-greeting">Hi!</span> <span className="hero-title-name">I'm Aditi.</span>
       </h1>
       <p className="hero-subtitle">
-        I like to keep my work <TextType
-                text={['simple.', 'a lil quirky ;).', 'elegant.']}
+        I like to keep my work&nbsp;<TextType
+                text={['simple.', 'a lil quirky ;)', 'elegant.']}
                 typingSpeed={75}
                 deletingSpeed={50}
                 pauseDuration={1000}

@@ -3,6 +3,7 @@
   background: #060010;
   position: relative;
   overflow: hidden;
+  padding-bottom: 6rem;
 }
 
 .swc-work-section::before {
@@ -12,15 +13,26 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse at center, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
+  /* background: radial-gradient(ellipse at center, rgba(76, 175, 80, 0.1) 0%, transparent 70%); */
   pointer-events: none;
 }
 
 .swc-work-container {
   max-width: 70rem;
-  margin: 7.62rem auto;
+  margin: 6.19rem auto 0;
+  padding-top: 6.19rem;
   position: relative;
   z-index: 1;
+}
+
+.custom-scroll-text {
+  color: #FFF;
+  text-align: center;
+  font-family: Figtree;
+  font-size: 8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .swc-work-section-description {
@@ -93,8 +105,30 @@
     font-size: 2rem;
   }
   
+  .swc-work-section {
+    padding-bottom: 4rem;
+  }
+
   .swc-work-container {
-    padding: 0 1.5rem;
+    padding: 4rem 2rem 0;
+    margin: 0 auto;
+  }
+
+  .swc-work-section-description {
+    width: 85%;
+  }
+
+  .swc-work-section-description p {
+    font-size: 1.5rem;
+  }
+
+  .hover-image-reveal-header {
+    font-size: 1.5rem;
+    margin-top: 5rem;
+  }
+
+  .custom-scroll-text {
+    font-size: 6rem;
   }
 }
 
@@ -110,9 +144,28 @@
   .footer-title {
     font-size: 1.5rem;
   }
+
+  .swc-work-section {
+    padding-bottom: 3rem;
+  }
   
   .swc-work-container {
-    padding: 0 1rem;
+    padding: 3rem 1.5rem 0;
+    margin: 0 auto;
+  }
+
+  .swc-work-section-description {
+    width: 100%;
+  }
+
+  .swc-work-section-description p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .hover-image-reveal-header {
+    font-size: 2rem;
+    margin-top: 4rem;
   }
   
   .section-header {
@@ -121,6 +174,10 @@
   
   .section-footer {
     margin-top: 4rem;
+  }
+
+  .custom-scroll-text {
+    font-size: 4rem;
   }
 }
 
@@ -133,9 +190,36 @@
     font-size: 1.2rem;
     line-height: 1.4;
   }
+
+  .swc-work-section {
+    padding-bottom: 2rem;
+  }
+
+  .swc-work-container {
+    padding: 2rem 1rem 0;
+    margin: 0 auto;
+  }
+
+  .swc-work-section-description {
+    width: 100%;
+  }
+
+  .swc-work-section-description p {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+
+  .hover-image-reveal-header {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+  }
   
   .padding-large {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .custom-scroll-text {
+    font-size: 3rem;
   }
 }
