@@ -1,8 +1,41 @@
 import ScrollVelocity from '../../components/effects/ScrollVelocity';
 import GridLines from 'react-gridlines';
 import './MyWork.css';
+import { useEffect, useRef } from 'react';
 
 const MyWork = () => {
+  const projectRefs = useRef([]);
+
+  useEffect(() => {
+    const observers = projectRefs.current.map((ref, index) => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add('reveal');
+              }, index * 150); // Stagger the animations
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+          rootMargin: '0px 0px -100px 0px'
+        }
+      );
+
+      if (ref) {
+        observer.observe(ref);
+      }
+
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
   const myWorkProjects = [
     {
       id: 1,
@@ -86,9 +119,10 @@ const MyWork = () => {
           className="custom-scroll-text"
         /> */}
         <div className="work-container">
-          {myWorkProjects.map((project) => (
+          {myWorkProjects.map((project, index) => (
             <div 
-              key={project.id} 
+              key={project.id}
+              ref={(el) => (projectRefs.current[index] = el)}
               className={`project-card ${project.imagePosition === 'right' ? 'reverse' : ''}`}
             >
               <div className="project-image">
