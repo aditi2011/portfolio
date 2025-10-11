@@ -85,7 +85,7 @@ function Header() {
 function ProductCard({ product, translate }) {
   return (
     <motion.div style={{ x: translate }} whileHover={{ y: 0 }} className="product-card">
-      <a href={product.link} className="product-link" target="_blank" rel="noreferrer">
+      {/* <a href={product.link} className="product-link" target="_blank" rel="noreferrer"> */}
         <img
           src={product.thumbnail || "/placeholder.svg"}
           alt={product.title}
@@ -93,7 +93,7 @@ function ProductCard({ product, translate }) {
           width={600}
           height={600}
         />
-      </a>
+      {/* </a> */}
       <div className="product-overlay" aria-hidden="true" />
       <h2 className="product-title">{product.title}</h2>
     </motion.div>
