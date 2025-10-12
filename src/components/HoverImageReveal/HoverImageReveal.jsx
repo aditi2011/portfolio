@@ -1,15 +1,85 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './HoverImageReveal.css';
 
 const HoverImageReveal = ({ items }) => {
   const [hoveredItem, setHoveredItem] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const itemRefs = useRef([]);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return;
+
+    let animationFrameId = null;
+
+    const updateActiveItem = () => {
+      const viewportCenter = window.innerHeight / 2;
+      let closestIndex = -1;
+      let closestDistance = Infinity;
+
+      itemRefs.current.forEach((ref, index) => {
+        if (!ref) return;
+
+        const rect = ref.getBoundingClientRect();
+        const itemCenter = rect.top + rect.height / 2;
+        const distanceFromCenter = Math.abs(viewportCenter - itemCenter);
+
+        // Only consider items that are at least 30% visible
+        const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+        const visibilityRatio = visibleHeight / rect.height;
+
+        if (visibilityRatio >= 0.3 && distanceFromCenter < closestDistance) {
+          closestDistance = distanceFromCenter;
+          closestIndex = index;
+        }
+      });
+
+      if (closestIndex !== -1 && closestIndex !== activeItem) {
+        setActiveItem(closestIndex);
+      }
+    };
+
+    const handleScroll = () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      animationFrameId = requestAnimationFrame(updateActiveItem);
+    };
+
+    // Initial check
+    updateActiveItem();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMobile, items.length, activeItem]);
 
   const handleMouseEnter = (index) => {
-    setHoveredItem(index);
+    if (!isMobile) {
+      setHoveredItem(index);
+    }
   };
 
   const handleMouseLeave = () => {
-    setHoveredItem(null);
+    if (!isMobile) {
+      setHoveredItem(null);
+    }
   };
 
   return (
@@ -18,7 +88,8 @@ const HoverImageReveal = ({ items }) => {
         {items.map((item, index) => (
           <div
             key={index}
-            className={`menu-item ${hoveredItem === index ? 'hovered' : ''}`}
+            ref={(el) => (itemRefs.current[index] = el)}
+            className={`menu-item ${hoveredItem === index ? 'hovered' : ''} ${isMobile && activeItem === index ? 'active' : ''}`}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
           >
@@ -46,13 +117,18 @@ const HoverImageReveal = ({ items }) => {
                     {/* </div> */}
                 </div>
             </div>
-            {hoveredItem === index && item.image && (
+            {!isMobile && hoveredItem === index && item.image && (
               <div
                 className="hover-image"
                 style={{
                   backgroundImage: `url(${item.image})`
                 }}
               />
+            )}
+            {isMobile && item.image && (
+              <div className={`mobile-accordion-image ${activeItem === index ? 'expanded' : ''}`}>
+                <img src={item.image} alt={item.title} />
+              </div>
             )}
           </div>
         ))}

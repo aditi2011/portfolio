@@ -48,7 +48,7 @@ const SWCWork = () => {
         />
       <div className="swc-work-container">
         <div className="swc-work-section-description">
-          <p>As the Product Design Lead at Students’ Web Committee (SWC) at IITG I had the opportunity to mentor 7+ projects. Most of which have a user base of 10k+ students.</p>
+          <p>As the Product Design Lead at Students’ Web Committee (SWC) at IITG, I mentored 7+ projects, serving a user base of ~10k students.</p>
         </div>
 
         <p className="hover-image-reveal-header">Glimpse of the work mentored by me:</p>

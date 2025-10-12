@@ -4,13 +4,15 @@
     top: 1.5rem;
     left: 0;
     right: 0;
-    z-index: 9999;
-    pointer-events: none;
-    font-family: Figtree;
+    z-index: 9998;
+    font-family: "DM Sans";
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+    letter-spacing: -0.025rem;
 }
 
 .glass-surface-navbar-container {
@@ -28,12 +30,12 @@
 .navbar-content {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
     align-items: center;
 }
 
 .navbar-item-left, .navbar-item-right {
-    height: 2.5rem;
+    height: 3.5rem;
 }
 
 .navbar-item {
@@ -51,20 +53,41 @@
     transition: transform 1s ease, color 1s ease;
 }
 
+.navbar-item-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-item-center ul{
+    display: flex;
+    height: 3rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(22.700000762939453px);
+    padding: 0.5rem 1.25rem;
+}
+
+.navbar-item-center .navbar-item{
+    padding-right: 1.38rem;
+    padding-left: 1.38rem;
+}
+
 ul{
     list-style: none;
     height: 100%;
 }
-
+/* 
 .navbar-item-left .navbar-item{
     padding-left: 2.62rem;
-    /* margin-left: 0.75rem; */
 }
 
 .navbar-item-right .navbar-item{
     padding-right: 2.62rem;
-    /* margin-right: 0.75rem; */
-}
+} */
 
 .navbar-item-left ul{
     display: flex;
@@ -111,7 +134,7 @@ ul{
 
 .navbar-text.active {
     color: #ffffff;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* Dark mode styles for mentor section */
@@ -128,7 +151,7 @@ ul{
 .dark-mode .navbar-text.active,
 .navbar-text.dark-text.active {
     color: #000000 !important;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* .glass-surface-navbar-container.dark-mode {
@@ -149,7 +172,7 @@ ul{
 }
 
 .navbar-item-resume-button {
-    height: 100%;
+    height: 2.55rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,4 +187,39 @@ ul{
 
 .navbar-item-resume-button .navbar-text {
     color: black;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .navbar-content {
+        grid-template-columns: 1fr;
+        justify-content: flex-end;
+    }
+
+    /* Hide the left section (Open for work) on smaller screens */
+    .navbar-item-left {
+        display: none;
+    }
+
+    /* Hide center navigation items */
+    .navbar-item-center {
+        display: none;
+    }
+
+    /* Resume button adjustments */
+    .navbar-item-right {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
 }

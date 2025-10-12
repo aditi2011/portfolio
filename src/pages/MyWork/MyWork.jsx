@@ -1,12 +1,24 @@
 import ScrollVelocity from '../../components/effects/ScrollVelocity';
 import GridLines from 'react-gridlines';
 import './MyWork.css';
+import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const MyWork = () => {
+  const projectRefs = useRef([]);
+  const navigate = useNavigate();
+
+  const handleProjectClick = (caseStudyId) => {
+    if (caseStudyId) {
+      navigate(`/case-study/${caseStudyId}`);
+    }
+  };
+
   const myWorkProjects = [
     {
       id: 1,
-      title: 'Staged - App Design',
+      idName: 'staged',
+      title: 'Staged',
       description: 'An app for managers and artists to seamlessly book gigs.',
       details: [
         'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
@@ -17,29 +29,34 @@ const MyWork = () => {
     },
     {
       id: 2,
-      title: 'College Cupid - App Design',
+      idName: 'college-cupid',
+      title: 'College Cupid',
       description: 'An app for managers and artists to seamlessly book gigs through.',
       details: [
         'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
         'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
       ],
       image: 'https://api.builder.io/api/v1/image/assets/TEMP/d99d94e70887ed052f714946c825424758644ebf?width=1150',
-      imagePosition: 'right'
+      imagePosition: 'right',
+      caseStudyId: 'college-cupid'
     },
     {
       id: 3,
-      title: 'Hygo - Website Design',
+      idName: 'hygo',
+      title: 'Hygo',
       description: 'An app for managers and artists to seamlessly book gigs through.',
       details: [
         'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
         'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
       ],
       gradient: 'linear-gradient(135deg, #36238E 0%, #936DC8 33%, #C2B5FF 66%, #BED836 100%)',
-      imagePosition: 'left'
+      imagePosition: 'left',
+      caseStudyId: 'hygo'
     },
     {
       id: 4,
-      title: 'RareLink - App Design',
+      idName: 'rarelink',
+      title: 'RareLink',
       subtitle: '(Ongoing)',
       description: 'An app for managers and artists to seamlessly book gigs through.',
       details: [
@@ -51,33 +68,33 @@ const MyWork = () => {
     }
   ];
 
-  const mentorWorkProjects = [
-    {
-      id: 1,
-      title: 'One Stop - App Redesign',
-      description: 'An app for managers and artists to seamlessly book gigs through.',
-      placeholder: true
-    },
-    {
-      id: 2,
-      title: 'Library Token',
-      description: 'An app for managers and artists to seamlessly book gigs through.',
-      placeholder: true
-    },
-    {
-      id: 3,
-      title: 'No Dues - Dashboard',
-      description: 'An app for managers and artists to seamlessly book gigs through.',
-      placeholder: true
-    }
-  ];
+  // const mentorWorkProjects = [
+  //   {
+  //     id: 1,
+  //     title: 'One Stop - App Redesign',
+  //     description: 'An app for managers and artists to seamlessly book gigs through.',
+  //     placeholder: true
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'Library Token',
+  //     description: 'An app for managers and artists to seamlessly book gigs through.',
+  //     placeholder: true
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'No Dues - Dashboard',
+  //     description: 'An app for managers and artists to seamlessly book gigs through.',
+  //     placeholder: true
+  //   }
+  // ];
 
   return (
     <div className="my-work" id="my-work">
       
       <section className="work-section">
-        {/* <GridLines className="grid-lines" lineColor="rgba(255, 255, 255, 0.1)" cellWidth={74} cellHeight={74}>
-        </GridLines> */}
+        <GridLines className="grid-lines" lineColor="rgba(255, 255, 255, 0.1)" cellWidth={168} cellHeight={167}>
+        </GridLines>
         {/* <ScrollVelocity
           texts={['MY PROJECTS \u00A0\u00A0- \u00A0']} 
           velocity={200}
@@ -86,10 +103,13 @@ const MyWork = () => {
           className="custom-scroll-text"
         /> */}
         <div className="work-container">
-          {myWorkProjects.map((project) => (
+          {myWorkProjects.map((project, index) => (
             <div 
-              key={project.id} 
-              className={`project-card ${project.imagePosition === 'right' ? 'reverse' : ''}`}
+              key={project.id}
+              id={project.idName}
+              ref={(el) => (projectRefs.current[index] = el)}
+              className={`project-card ${project.imagePosition === 'right' ? 'reverse' : ''} ${project.caseStudyId ? 'clickable' : ''}`}
+              onClick={() => handleProjectClick(project.caseStudyId)}
             >
               <div className="project-image">
                 {project.image ? (
