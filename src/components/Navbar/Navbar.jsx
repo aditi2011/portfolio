@@ -101,7 +101,7 @@ export default function Navbar() {
                                         activeClass="active"
                                         className={`navbar-text ${isInMentorSection ? 'dark-text' : ''}`}
                                     >
-                                        My Work
+                                        Projects
                                     </Link>
                                 </li>
                                 <li className='navbar-item navbar-item-about'>
@@ -109,7 +109,7 @@ export default function Navbar() {
                                         to="about-me"
                                         smooth={true} 
                                         duration={() => getScrollDuration(document.getElementById('about-me'))} 
-                                        offset={130}
+                                        offset={0}
                                         spy={true}
                                         activeClass="active"
                                         className={`navbar-text ${isInMentorSection ? 'dark-text' : ''}`}

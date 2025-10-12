@@ -4,6 +4,9 @@ import Navbar from './components/Navbar/Navbar';
 import MyWork from './pages/MyWork/MyWork';
 import SWCWork from './pages/SWCWork/SWCWork';
 import CaseStudy from './pages/CaseStudy/CaseStudy';
+import AboutMe from './pages/AboutMe/AboutMe';
+import Footer from './components/Footer/Footer';
+import CustomCursor from './components/CustomCursor/CustomCursor';
 
 import './App.css';
 
@@ -13,12 +16,15 @@ function App() {
       <Home />
       <MyWork />
       <SWCWork />
+      <AboutMe />
+      <Footer />
     </>
   );
 
   return (
     <Router>
       <div className="App">
+        <CustomCursor />
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

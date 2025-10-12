@@ -1,0 +1,49 @@
+.custom-cursor,
+.custom-cursor-dot {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+}
+
+.custom-cursor {
+  width: 30px;
+  height: 30px;
+  /* border: 2px solid white; */
+    background-color: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease-out, width 0.3s ease, height 0.3s ease;
+}
+
+.custom-cursor.pointer {
+  width: 40px;
+  height: 40px;
+}
+
+.custom-cursor-dot {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+}
+
+.custom-cursor-dot.pointer {
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0.8;
+}
+
+/* Hide default cursor */
+* {
+  cursor: none !important;
+}
+
+/* Optional: Show default cursor on specific elements if needed */
+input,
+textarea,
+select {
+  cursor: text !important;
+}
