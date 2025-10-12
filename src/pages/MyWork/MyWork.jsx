@@ -8,55 +8,6 @@ const MyWork = () => {
   const projectRefs = useRef([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      projectRefs.current.forEach((ref, index) => {
-        if (!ref) return;
-
-        const rect = ref.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        // Calculate scroll progress (0 to 1) as element moves through viewport
-        const elementMiddle = rect.top + rect.height / 2;
-        const screenMiddle = windowHeight / 2;
-        const distance = elementMiddle - screenMiddle;
-        
-        // Same parallax speed for all cards (downward movement like College Cupid)
-        const parallaxSpeed = 0.4;
-        const translateY = distance * parallaxSpeed;
-        
-        // Add subtle scale for depth
-        const scale = 1 + Math.abs(distance) / windowHeight * 0.05;
-        const finalScale = Math.min(scale, 1.05);
-        
-        // Apply parallax transform without opacity fade
-        ref.style.transform = `translateY(${translateY}px) scale(${finalScale})`;
-        ref.style.opacity = '1';
-      });
-    };
-
-    // Initial call
-    handleScroll();
-    
-    // Add scroll listener with throttling for performance
-    let ticking = false;
-    const scrollListener = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    
-    window.addEventListener('scroll', scrollListener, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', scrollListener);
-    };
-  }, []);
-
   const handleProjectClick = (caseStudyId) => {
     if (caseStudyId) {
       navigate(`/case-study/${caseStudyId}`);
@@ -66,6 +17,7 @@ const MyWork = () => {
   const myWorkProjects = [
     {
       id: 1,
+      idName: 'staged',
       title: 'Staged',
       description: 'An app for managers and artists to seamlessly book gigs.',
       details: [
@@ -77,6 +29,7 @@ const MyWork = () => {
     },
     {
       id: 2,
+      idName: 'college-cupid',
       title: 'College Cupid',
       description: 'An app for managers and artists to seamlessly book gigs through.',
       details: [
@@ -89,6 +42,7 @@ const MyWork = () => {
     },
     {
       id: 3,
+      idName: 'hygo',
       title: 'Hygo',
       description: 'An app for managers and artists to seamlessly book gigs through.',
       details: [
@@ -101,6 +55,7 @@ const MyWork = () => {
     },
     {
       id: 4,
+      idName: 'rarelink',
       title: 'RareLink',
       subtitle: '(Ongoing)',
       description: 'An app for managers and artists to seamlessly book gigs through.',
@@ -113,33 +68,33 @@ const MyWork = () => {
     }
   ];
 
-  const mentorWorkProjects = [
-    {
-      id: 1,
-      title: 'One Stop - App Redesign',
-      description: 'An app for managers and artists to seamlessly book gigs through.',
-      placeholder: true
-    },
-    {
-      id: 2,
-      title: 'Library Token',
-      description: 'An app for managers and artists to seamlessly book gigs through.',
-      placeholder: true
-    },
-    {
-      id: 3,
-      title: 'No Dues - Dashboard',
-      description: 'An app for managers and artists to seamlessly book gigs through.',
-      placeholder: true
-    }
-  ];
+  // const mentorWorkProjects = [
+  //   {
+  //     id: 1,
+  //     title: 'One Stop - App Redesign',
+  //     description: 'An app for managers and artists to seamlessly book gigs through.',
+  //     placeholder: true
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'Library Token',
+  //     description: 'An app for managers and artists to seamlessly book gigs through.',
+  //     placeholder: true
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'No Dues - Dashboard',
+  //     description: 'An app for managers and artists to seamlessly book gigs through.',
+  //     placeholder: true
+  //   }
+  // ];
 
   return (
     <div className="my-work" id="my-work">
       
       <section className="work-section">
-        {/* <GridLines className="grid-lines" lineColor="rgba(255, 255, 255, 0.1)" cellWidth={74} cellHeight={74}>
-        </GridLines> */}
+        <GridLines className="grid-lines" lineColor="rgba(255, 255, 255, 0.1)" cellWidth={80} cellHeight={84}>
+        </GridLines>
         {/* <ScrollVelocity
           texts={['MY PROJECTS \u00A0\u00A0- \u00A0']} 
           velocity={200}
@@ -151,6 +106,7 @@ const MyWork = () => {
           {myWorkProjects.map((project, index) => (
             <div 
               key={project.id}
+              id={project.idName}
               ref={(el) => (projectRefs.current[index] = el)}
               className={`project-card ${project.imagePosition === 'right' ? 'reverse' : ''} ${project.caseStudyId ? 'clickable' : ''}`}
               onClick={() => handleProjectClick(project.caseStudyId)}

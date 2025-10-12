@@ -17,15 +17,32 @@ export function HeroParallax({ products }) {
 
   const springConfig = { stiffness: 300, damping: 30, mass: 1 }
 
+  // Check if screen is mobile and update on resize
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 767)
+  const [isTablet, setIsTablet] = React.useState(window.innerWidth > 767 && window.innerWidth <= 1032)
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767)
+      setIsTablet(window.innerWidth > 767 && window.innerWidth <= 1032)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   const translateX = useSpring(useTransform(scrollYProgress, [0, 1], [0, 1000]), springConfig)
   const translateXReverse = useSpring(useTransform(scrollYProgress, [0, 1], [0, -1000]), springConfig)
   const rotateX = useSpring(useTransform(scrollYProgress, [0, 0.2], [15, 0]), springConfig)
   const opacity = useSpring(useTransform(scrollYProgress, [0, 0.4], [0.1, 1]), springConfig)
   const rotateZ = useSpring(useTransform(scrollYProgress, [0, 0.2], [20, 0]), springConfig)
-  const translateY = useSpring(useTransform(scrollYProgress, [0, 0.2], [-700, 200]), springConfig)
+  const translateY = useSpring(
+    useTransform(scrollYProgress, [0, 0.2], isMobile ? [-300, 200] : isTablet ? [-500, 0] : [-750, 0]),
+    springConfig
+  )
 
   return (
-    <div ref={ref} className="hero-parallax">
+    <div ref={ref} className="hero-parallax" id="home">
       <Header />
       <motion.div style={{ rotateX, rotateZ, translateY, opacity }} className="hero-stage">
         <motion.div className="row row-reverse">
@@ -64,7 +81,7 @@ function Header() {
       <h1 className="hero-title">
         <span className="hero-title-greeting">Hi!</span> <span className="hero-title-name">I'm Aditi.</span>
       </h1>
-      <p className="hero-subtitle">
+      <div className="hero-subtitle">
         I like to keep my work&nbsp;<TextType
                 text={['simple.', 'a lil quirky ;)', 'elegant.']}
                 typingSpeed={75}
@@ -77,7 +94,7 @@ function Header() {
                 hideCursorWhileTyping={false}
                 startOnVisible={true}
             />
-      </p>
+      </div>
     </div>
   )
 }

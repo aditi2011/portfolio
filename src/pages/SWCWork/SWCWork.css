@@ -1,6 +1,6 @@
 .swc-work-section {
   min-height: 100vh;
-  background: #060010;
+  /* background: #060010; */
   position: relative;
   overflow: hidden;
   padding-bottom: 6rem;
@@ -19,8 +19,8 @@
 
 .swc-work-container {
   max-width: 70rem;
-  margin: 6.19rem auto 0;
-  padding-top: 6.19rem;
+  margin: 4.19rem auto 0;
+  padding-top: 1.19rem;
   position: relative;
   z-index: 1;
 }
@@ -28,7 +28,7 @@
 .custom-scroll-text {
   color: #FFF;
   text-align: center;
-  font-family: Figtree;
+  font-family: 'DM Sans', sans-serif;
   font-size: 8rem;
   font-style: normal;
   font-weight: 500;
@@ -43,7 +43,10 @@
 
 .swc-work-section-description p{
     color: #FFF;
-    font-family: Figtree;
+    /* font-family: Figtree; */
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.56px;
+    line-height: '144.138%';
     font-size: 2rem;
     font-style: normal;
     font-weight: 400;
@@ -57,7 +60,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    margin-top: 7.81rem;
+    margin-top: 5.81rem;
 }
 
 .section-title {

@@ -3,11 +3,12 @@
 } */
 
 .grid-lines{
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 110%;
     pointer-events: none;
     z-index: -1;
     background-color: #060010;
@@ -17,7 +18,7 @@
 .custom-scroll-text {
     color: #FFF;
     text-align: center;
-    font-family: Figtree;
+    font-family: 'DM Sans', sans-serif;
     font-size: 8rem;
     font-style: normal;
     font-weight: 500;
@@ -27,7 +28,7 @@
 .mentor-scroll-text {
     color: #000;
     text-align: center;
-    font-family: Figtree;
+    font-family: 'DM Sans', sans-serif;
     font-size: 4rem;
     font-style: normal;
     font-weight: 500;
@@ -37,7 +38,7 @@
 /* My Work Section */
 .work-section {
     position: relative;
-    background-color: #060010;
+    /* background-color: #060010; */
     /* padding: 6rem 15.63rem; */
     padding-bottom: 6rem;
 }
@@ -136,7 +137,7 @@
 
 .project-header h3 {
     color: #FFF;
-    font-family: Figtree;
+    font-family: 'DM Sans', sans-serif;
     font-size: 3rem;
     font-weight: 500;
     margin: 0;
@@ -144,7 +145,7 @@
 
 .project-header .subtitle {
     color: #FFF;
-    font-family: Figtree;
+    font-family: 'DM Sans', sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
     margin: 0.5rem 0 0 0;
@@ -160,7 +161,8 @@
     color: #FFF;
     font-family: Figtree;
     font-size: 1.5rem;
-    letter-spacing: 0.96px;
+    letter-spacing: 0.56px;
+    line-height: '144.138%';
     margin: 0;
     font-weight: 100;
 }
@@ -187,7 +189,8 @@
 
 .mentor-intro {
     color: #000;
-    font-family: Figtree;
+    /* font-family: Figtree; */
+    font-family: 'DM Sans', sans-serif;
     font-size: 1.5rem;
     line-height: normal;
     margin-bottom: 4rem;
@@ -321,7 +324,7 @@
     }
 
     .work-container {
-        gap: 3rem;
+        gap: 8rem;
     }
 
     .project-card {
@@ -386,7 +389,7 @@
     }
 
     .work-container {
-        gap: 2.5rem;
+        gap: 5rem;
     }
 
     .project-card {

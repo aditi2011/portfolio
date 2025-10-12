@@ -46,7 +46,7 @@ export default function Navbar() {
 
     return (
         <div className='navbar'>
-            <GlassSurface 
+            {/* <GlassSurface 
                 width={'45%'} 
                 height={'2.5rem'}
                 brightness={0.9}
@@ -65,16 +65,25 @@ export default function Navbar() {
                     backdropFilter: 'blur(10px)',
                     border: isInMentorSection ? '1px solid rgba(0, 0, 0, 0.20)' : '1px solid rgba(255, 255, 255, 0.20)',
                 }}
-            >
+            > */}
                 <div className="navbar-content">
                         <div className='navbar-item-left'>
                             <ul>
                                 <li className='navbar-item'>
+                                    <a href="https://www.linkedin.com/in/aditiagrawal20/" className={`navbar-text ${isInMentorSection ? 'dark-text' : ''}`} style={{ textDecoration: 'none' }}>
+                                        Open for work
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className='navbar-item-center'>
+                            <ul>
+                                <li className='navbar-item navbar-item-home'>
                                     <Link 
                                         to="home" 
                                         smooth={true} 
                                         duration={() => getScrollDuration(document.getElementById('home'))} 
-                                        offset={-70}
+                                        offset={40}
                                         spy={true}
                                         activeClass="active"
                                         className={`navbar-text ${isInMentorSection ? 'dark-text' : ''}`}
@@ -82,12 +91,12 @@ export default function Navbar() {
                                         Home
                                     </Link>
                                 </li>
-                                <li className='navbar-item'>
+                                <li className='navbar-item navbar-item-work'>
                                     <Link 
                                         to="my-work" 
                                         smooth={true} 
                                         duration={() => getScrollDuration(document.getElementById('my-work'))} 
-                                        offset={130}
+                                        offset={0}
                                         spy={true}
                                         activeClass="active"
                                         className={`navbar-text ${isInMentorSection ? 'dark-text' : ''}`}
@@ -95,11 +104,23 @@ export default function Navbar() {
                                         My Work
                                     </Link>
                                 </li>
+                                <li className='navbar-item navbar-item-about'>
+                                    <Link 
+                                        to="about-me"
+                                        smooth={true} 
+                                        duration={() => getScrollDuration(document.getElementById('about-me'))} 
+                                        offset={130}
+                                        spy={true}
+                                        activeClass="active"
+                                        className={`navbar-text ${isInMentorSection ? 'dark-text' : ''}`}
+                                    >
+                                        About
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                         <div className='navbar-item-right'>
                             <ul>
-                                {/* <li className='navbar-item'><span className={`navbar-text ${isInMentorSection ? 'dark-text' : ''}`}>About Me</span></li> */}
                                 <li className='navbar-item'
                                     style={{
                                         paddingRight: '0',
@@ -108,26 +129,14 @@ export default function Navbar() {
                                         marginLeft: '0'
                                     }}
                                 >
-                                    {/* <GlassSurface
-                                        width={'fit-content'}
-                                        height={'3.125rem'}
-                                        borderRadius={30}
-                                        brightness={0.2}
-                                        displace={0.5}
-                                        className="glass-surface-resume-button"
-                                        style={{
-                                            'backgroundColor': 'rgba(255, 255, 255, 0.33)',
-                                        }}
-                                    > */}
                                     <div className='navbar-item-resume-button'>
                                         <span className="navbar-text">Resume</span>
                                     </div>
-                                    {/* </GlassSurface> */}
                                 </li>
                             </ul>
                         </div>
                 </div>
-            </GlassSurface>
+            {/* </GlassSurface> */}
         </div>
     );
 }
