@@ -26,7 +26,7 @@ const Footer = () => {
     <footer className="footer-section">
       <div className="footer-container">
         <div className="footer-content">
-          {/* <div className="footer-column">
+          <div className="footer-column">
             <h3 className="footer-heading">Quick Links</h3>
             <ul className="footer-links">
               {quickLinks.map((link) => (
@@ -43,7 +43,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div> */}
+          </div>
 
           <div className="footer-column">
             <h3 className="footer-heading">Case Studies</h3>

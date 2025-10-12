@@ -8,8 +8,8 @@
 }
 
 .custom-cursor {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   /* border: 2px solid white; */
     background-color: rgba(255, 255, 255, 1);
   border-radius: 50%;
@@ -18,8 +18,8 @@
 }
 
 .custom-cursor.pointer {
-  width: 40px;
-  height: 40px;
+  width: 90px;
+  height: 90px;
 }
 
 .custom-cursor-dot {
@@ -46,4 +46,27 @@ input,
 textarea,
 select {
   cursor: text !important;
+}
+
+/* Show default cursor on tablets and phones */
+@media (max-width: 1024px) {
+  .custom-cursor,
+  .custom-cursor-dot {
+    display: none;
+  }
+  
+  * {
+    cursor: auto !important;
+  }
+  
+  input,
+  textarea,
+  select {
+    cursor: text !important;
+  }
+  
+  a,
+  button {
+    cursor: pointer !important;
+  }
 }
