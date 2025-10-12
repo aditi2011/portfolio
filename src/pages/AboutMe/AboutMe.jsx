@@ -29,14 +29,13 @@ const AboutMe = () => {
             <h2 className="about-me-heading">About Me</h2>
             <p className="about-me-description">
               I'm a passionate Product Designer with a keen eye for detail and a love for creating 
-              seamless user experiences. With years of experience in UI/UX design, I've worked on 
+              seamless user experiences. I've worked on 
               projects ranging from mobile apps to enterprise dashboards, always striving to balance 
               aesthetics with functionality.
             </p>
             <p className="about-me-description">
-              As the Product Design Lead at Students' Web Committee (SWC) at IIT Guwahati, I've had 
-              the opportunity to mentor talented designers and work on products that impact thousands 
-              of students daily. I believe in user-centered design and data-driven decisions.
+              Today, as the Lead Product Designer at SWC IITG, I believe the best solutions come from truly understanding people; their struggles, motivations, and the context of their lives.
+               {/* Whether I'm sketching ideas, diving into user research, or prototyping solutions, I'm driven by the possibility of creating something that genuinely makes someone's day a little easier */}
             </p>
             
             <div className="skills-section">

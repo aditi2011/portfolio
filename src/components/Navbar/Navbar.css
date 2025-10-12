@@ -134,7 +134,7 @@ ul{
 
 .navbar-text.active {
     color: #ffffff;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* Dark mode styles for mentor section */
@@ -151,7 +151,7 @@ ul{
 .dark-mode .navbar-text.active,
 .navbar-text.dark-text.active {
     color: #000000 !important;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* .glass-surface-navbar-container.dark-mode {
@@ -197,8 +197,8 @@ ul{
     }
 
     .navbar-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        grid-template-columns: 1fr;
+        justify-content: flex-end;
     }
 
     /* Hide the left section (Open for work) on smaller screens */
@@ -206,23 +206,9 @@ ul{
         display: none;
     }
 
-    /* Center section becomes left-aligned and only shows My Work */
+    /* Hide center navigation items */
     .navbar-item-center {
-        justify-content: flex-start;
-    }
-
-    /* Hide Home and About links on smaller screens */
-    .navbar-item-home,
-    .navbar-item-about {
         display: none;
-    }
-
-    /* Keep only My Work visible */
-    .navbar-item-work {
-        display: flex;
-        padding-left: 0;
-        padding-right: 0;
-        margin: 0;
     }
 
     /* Resume button adjustments */
@@ -235,9 +221,5 @@ ul{
     .navbar {
         margin-left: 1.5rem;
         margin-right: 1.5rem;
-    }
-
-    .navbar-content {
-        gap: 0.5rem;
     }
 }

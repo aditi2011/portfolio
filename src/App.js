@@ -13,10 +13,16 @@ import './App.css';
 function App() {
   const HomePage = () => (
     <>
-      <Home />
-      <MyWork />
-      <SWCWork />
-      <AboutMe />
+      <div id="home">
+        <Home />
+      </div>
+      <div id='projects'>
+        <MyWork />
+        <SWCWork />
+      </div>
+      <div id="about-me">
+        <AboutMe />
+      </div>
       <Footer />
     </>
   );
