@@ -267,7 +267,7 @@
 @media (max-width: 1024px) {
     .work-section,
     .mentor-section {
-        padding: 4rem 2rem;
+        padding: 4rem 2rem 10rem 2rem;
     }
 
     .work-container {
@@ -320,7 +320,7 @@
 
     .work-section,
     .mentor-section {
-        padding: 3rem 1.5rem;
+        padding: 3rem 1.5rem 8rem 1.5rem;
     }
 
     .work-container {
@@ -385,7 +385,7 @@
 
     .work-section,
     .mentor-section {
-        padding: 2rem 1rem;
+        padding: 2rem 1rem 8rem 1rem;
     }
 
     .work-container {

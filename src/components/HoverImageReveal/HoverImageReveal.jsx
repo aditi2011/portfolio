@@ -6,6 +6,7 @@ const HoverImageReveal = ({ items }) => {
   const [activeItem, setActiveItem] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const itemRefs = useRef([]);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -70,17 +71,56 @@ const HoverImageReveal = ({ items }) => {
     };
   }, [isMobile, items.length, activeItem]);
 
-  const handleMouseEnter = (index) => {
-    if (!isMobile) {
-      setHoveredItem(index);
-    }
-  };
+  // Desktop hover detection based on mouse position
+  useEffect(() => {
+    if (isMobile) return;
 
-  const handleMouseLeave = () => {
-    if (!isMobile) {
-      setHoveredItem(null);
-    }
-  };
+    let lastMouseX = null;
+    let lastMouseY = null;
+
+    const checkHover = (x, y) => {
+      let foundHover = null;
+
+      itemRefs.current.forEach((ref, index) => {
+        if (!ref) return;
+
+        const rect = ref.getBoundingClientRect();
+        
+        // Check if mouse is within the bounds of this item
+        if (
+          x >= rect.left &&
+          x <= rect.right &&
+          y >= rect.top &&
+          y <= rect.bottom
+        ) {
+          foundHover = index;
+        }
+      });
+
+      setHoveredItem(foundHover);
+    };
+
+    const handleMouseMove = (e) => {
+      lastMouseX = e.clientX;
+      lastMouseY = e.clientY;
+      checkHover(lastMouseX, lastMouseY);
+    };
+
+    const handleScroll = () => {
+      // Recheck hover state on scroll using last known mouse position
+      if (lastMouseX !== null && lastMouseY !== null) {
+        checkHover(lastMouseX, lastMouseY);
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMobile, items.length]);
 
   return (
     <div className="hover-image-reveal-container">
@@ -90,8 +130,6 @@ const HoverImageReveal = ({ items }) => {
             key={index}
             ref={(el) => (itemRefs.current[index] = el)}
             className={`menu-item ${hoveredItem === index ? 'hovered' : ''} ${isMobile && activeItem === index ? 'active' : ''}`}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={handleMouseLeave}
           >
             <div className="menu-item-content">
                 {/* <div className='menu-item-index-div'>
