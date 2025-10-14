@@ -44,14 +44,14 @@ const CustomCursor = () => {
           top: `${position.y}px`,
         }}
       />
-      {isPointer && (
+      {/* {isPointer && (
         <div
           className={`custom-cursor-dot ${isPointer ? 'pointer' : ''}`}
           style={{
             left: `${position.x}px`,
             top: `${position.y}px`,
             }}        />
-        )}
+        )} */}
 
     </>
   );

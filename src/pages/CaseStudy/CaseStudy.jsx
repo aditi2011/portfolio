@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import hygoImage from '../../assets/case_studies/hygo_2x.png';
 import collegeCupidImage from '../../assets/case_studies/cupid_2x.png';
+import LoadingPage from '../Loading/LoadingPage';
 import './CaseStudy.css';
 
 // Case study data mapping
@@ -61,7 +62,14 @@ const CaseStudy = () => {
   }, [imageLoaded, loading]);
 
   const handleClose = () => {
-    navigate('/');
+    // Check if this window was opened by another window (opened in a new tab)
+    if (window.opener) {
+      // Close the current tab
+      window.close();
+    } else {
+      // Fallback to navigate home if window.close() doesn't work
+      navigate('/');
+    }
   };
 
   // Don't render if invalid case study
@@ -72,12 +80,13 @@ const CaseStudy = () => {
   return (
     <div className="case-study-container">
       {loading ? (
-        <div className="loading-screen">
-          <div className="loading-content">
-            <div className="spinner"></div>
-            <h2>Loading {currentCaseStudy.title}...</h2>
-          </div>
-        </div>
+        // <div className="loading-screen">
+        //   <div className="loading-content">
+        //     <div className="spinner"></div>
+        //     <h2>Loading {currentCaseStudy.title}...</h2>
+        //   </div>
+        // </div>
+        <LoadingPage />
       ) : (
         <div className="case-study-content">
           <button className="close-button" onClick={handleClose}>

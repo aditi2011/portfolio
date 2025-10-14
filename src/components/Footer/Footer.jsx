@@ -19,7 +19,9 @@ const Footer = () => {
   ];
 
   const handleCaseStudyClick = (caseStudyId) => {
-    navigate(`/case-study/${caseStudyId}`);
+    // Open case study in a new tab
+    const baseUrl = window.location.origin + window.location.pathname;
+    window.open(`${baseUrl}#/case-study/${caseStudyId}`, '_blank');
   };
 
   return (
