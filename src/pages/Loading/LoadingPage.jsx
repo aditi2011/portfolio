@@ -12,6 +12,7 @@ import stagedThumb2 from '../../assets/staged_thumb2.jpeg';
 const LoadingPage = ({ onFinish }) => {
   const images = [bookThumb, cupidThumb, hygoThumb, lohitThumb, rareThumb, stagedThumb, stagedThumb2];
   const columnImages = [...images, ...images];
+  const columnDirections = ['up', 'down', 'up'];
 
   const [loadedCols, setLoadedCols] = useState(0);
   const [scrollPhase, setScrollPhase] = useState(false);
@@ -35,16 +36,18 @@ const LoadingPage = ({ onFinish }) => {
   return (
     <div className={`loading-page ${scrollPhase ? 'reveal-phase' : ''}`}>
       <div className="loading-columns">
-        {[0, 1, 2].map(i => (
+        {columnDirections.map((direction, i) => (
           <div
-            key={i}
-            className={`loading-column ${i % 2 === 0 ? 'scroll-down' : 'scroll-up'} ${loadedCols > i ? 'visible' : ''}`}
+            key={direction + i}
+            className={`loading-column direction-${direction} ${loadedCols > i ? 'visible' : ''}`}
           >
-            {columnImages.map((img, index) => (
-              <div key={`col${i}-${index}`} className="image-wrapper">
-                <img src={img} alt={`Loading ${index}`} />
-              </div>
-            ))}
+            <div className="column-track">
+              {columnImages.map((img, index) => (
+                <div key={`col${i}-${index}`} className="image-wrapper">
+                  <img src={img} alt={`Loading ${index}`} />
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>
