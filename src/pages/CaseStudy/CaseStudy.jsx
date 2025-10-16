@@ -130,7 +130,7 @@ const CaseStudy = () => {
 
   // Scroll spy for navbar using IntersectionObserver
   useEffect(() => {
-    if (!hasMultiplePages || !contentRef.current) return;
+    if (loading || !hasMultiplePages || !contentRef.current) return;
 
     const observerOptions = {
       root: contentRef.current,
@@ -199,7 +199,7 @@ const CaseStudy = () => {
       pageElements.forEach((element) => observer.unobserve(element));
       observer.disconnect();
     };
-  }, [hasMultiplePages]);
+  }, [hasMultiplePages, loading]);
 
   const scrollToPage = (pageNumber) => {
     if (!contentRef.current) return;
