@@ -29,19 +29,27 @@ const caseStudies = {
     title: 'Hygo',
     pages: [
       { id: 1, src: hygoP1, alt: 'Hygo Page 1', title: 'Overview' },
-      // { id: 2, src: hygoP2, alt: 'Hygo Page 2', title: 'Project Overview' },
       { id: 3, src: hygoP3, alt: 'Hygo Page 3', title: 'Secondary Research' },
       { id: 4, src: hygoP4, alt: 'Hygo Page 4', title: 'Problems' },
-      // { id: 5, src: hygoP5, alt: 'Hygo Page 5', title: 'Wireframes' },
-      // { id: 6, src: hygoP6, alt: 'Hygo Page 6', title: 'Visual Design' },
       { id: 7, src: hygoP7, alt: 'Hygo Page 7', title: 'User Research' },
       { id: 8, src: hygoP8, alt: 'Hygo Page 8', title: 'Features' },
-      // { id: 9, src: hygoP9, alt: 'Hygo Page 9', title: 'Prototyping' },
-      // { id: 10, src: hygoP10, alt: 'Hygo Page 10', title: 'Testing Results' },
-      // { id: 11, src: hygoP11, alt: 'Hygo Page 11', title: 'Final Design' },
       { id: 12, src: hygoP12, alt: 'Hygo Page 12', title: 'UI' },
-      // { id: 13, src: hygoP13, alt: 'Hygo Page 13', title: 'Impact & Metrics' },
-      // { id: 14, src: hygoP14, alt: 'Hygo Page 14', title: 'Conclusion' },
+    ],
+    allPages: [
+      { id: 1, src: hygoP1, alt: 'Hygo Page 1', title: 'Overview' },
+      { id: 2, src: hygoP2, alt: 'Hygo Page 2', title: 'Project Overview' },
+      { id: 3, src: hygoP3, alt: 'Hygo Page 3', title: 'Secondary Research' },
+      { id: 4, src: hygoP4, alt: 'Hygo Page 4', title: 'Problems' },
+      { id: 5, src: hygoP5, alt: 'Hygo Page 5', title: 'Wireframes' },
+      { id: 6, src: hygoP6, alt: 'Hygo Page 6', title: 'Visual Design' },
+      { id: 7, src: hygoP7, alt: 'Hygo Page 7', title: 'User Research' },
+      { id: 8, src: hygoP8, alt: 'Hygo Page 8', title: 'Features' },
+      { id: 9, src: hygoP9, alt: 'Hygo Page 9', title: 'Prototyping' },
+      { id: 10, src: hygoP10, alt: 'Hygo Page 10', title: 'Testing Results' },
+      { id: 11, src: hygoP11, alt: 'Hygo Page 11', title: 'Final Design' },
+      { id: 12, src: hygoP12, alt: 'Hygo Page 12', title: 'UI' },
+      { id: 13, src: hygoP13, alt: 'Hygo Page 13', title: 'Impact & Metrics' },
+      { id: 14, src: hygoP14, alt: 'Hygo Page 14', title: 'Conclusion' },
     ],
     description: 'Hygo Case Study'
   },
@@ -209,8 +217,8 @@ const CaseStudy = () => {
 
           <div className="images-container">
             {hasMultiplePages ? (
-              // Multiple pages with lazy loading
-              currentCaseStudy.pages.map((page) => (
+              // Render all pages, including those not in the navbar
+              currentCaseStudy.allPages.map((page) => (
                 <PageImage
                   key={page.id}
                   src={page.src}
