@@ -31,8 +31,9 @@
 }
 
 .cursor-text {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
   /* color: black; */
   text-align: center;
   white-space: nowrap;

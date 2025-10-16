@@ -48,7 +48,11 @@ const CustomCursor = () => {
           top: `${position.y}px`,
         }}
       >
-        {isProjectCard && <span className="cursor-text">View Project</span>}
+        {isProjectCard && (
+          <span className="cursor-text">
+            View<br />Project
+          </span>
+        )}
       </div>
       {/* {isPointer && (
         <div
