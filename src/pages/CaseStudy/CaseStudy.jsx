@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import hygoImage from '../../assets/case_studies/hygo_2x.png';
+// import hygoImage from '../../assets/case_studies/hygo_2x.png';
 import collegeCupidImage from '../../assets/case_studies/cupid_2x.png';
 import LoadingPage from '../Loading/LoadingPage';
 import './CaseStudy.css';
@@ -28,28 +28,56 @@ const caseStudies = {
   'hygo': {
     title: 'Hygo',
     pages: [
-      { id: 1, src: hygoP1, alt: 'Hygo Page 1', title: 'Overview' },
-      { id: 3, src: hygoP3, alt: 'Hygo Page 3', title: 'Secondary Research' },
-      { id: 4, src: hygoP4, alt: 'Hygo Page 4', title: 'Problems' },
-      { id: 7, src: hygoP7, alt: 'Hygo Page 7', title: 'User Research' },
-      { id: 8, src: hygoP8, alt: 'Hygo Page 8', title: 'Features' },
-      { id: 12, src: hygoP12, alt: 'Hygo Page 12', title: 'UI' },
-    ],
-    allPages: [
-      { id: 1, src: hygoP1, alt: 'Hygo Page 1', title: 'Overview' },
-      { id: 2, src: hygoP2, alt: 'Hygo Page 2', title: 'Project Overview' },
-      { id: 3, src: hygoP3, alt: 'Hygo Page 3', title: 'Secondary Research' },
-      { id: 4, src: hygoP4, alt: 'Hygo Page 4', title: 'Problems' },
-      { id: 5, src: hygoP5, alt: 'Hygo Page 5', title: 'Wireframes' },
-      { id: 6, src: hygoP6, alt: 'Hygo Page 6', title: 'Visual Design' },
-      { id: 7, src: hygoP7, alt: 'Hygo Page 7', title: 'User Research' },
-      { id: 8, src: hygoP8, alt: 'Hygo Page 8', title: 'Features' },
-      { id: 9, src: hygoP9, alt: 'Hygo Page 9', title: 'Prototyping' },
-      { id: 10, src: hygoP10, alt: 'Hygo Page 10', title: 'Testing Results' },
-      { id: 11, src: hygoP11, alt: 'Hygo Page 11', title: 'Final Design' },
-      { id: 12, src: hygoP12, alt: 'Hygo Page 12', title: 'UI' },
-      { id: 13, src: hygoP13, alt: 'Hygo Page 13', title: 'Impact & Metrics' },
-      { id: 14, src: hygoP14, alt: 'Hygo Page 14', title: 'Conclusion' },
+      { 
+        id: 1, 
+        title: 'Overview',
+        images: [
+          { src: hygoP1, alt: 'Hygo Page 1' },
+          { src: hygoP2, alt: 'Hygo Page 2' },
+        ]
+      },
+      { 
+        id: 3, 
+        title: 'Secondary Research',
+        images: [
+          { src: hygoP3, alt: 'Hygo Page 3' },
+        ]
+      },
+      { 
+        id: 4, 
+        title: 'Problems',
+        images: [
+          { src: hygoP4, alt: 'Hygo Page 4' },
+          { src: hygoP5, alt: 'Hygo Page 5' },
+          { src: hygoP6, alt: 'Hygo Page 6' },
+        ]
+      },
+      { 
+        id: 7, 
+        title: 'User Research',
+        images: [
+          { src: hygoP7, alt: 'Hygo Page 7' },
+        ]
+      },
+      { 
+        id: 8, 
+        title: 'Features',
+        images: [
+          { src: hygoP8, alt: 'Hygo Page 8' },
+          { src: hygoP9, alt: 'Hygo Page 9' },
+          { src: hygoP10, alt: 'Hygo Page 10' },
+          { src: hygoP11, alt: 'Hygo Page 11' },
+        ]
+      },
+      { 
+        id: 12, 
+        title: 'UI',
+        images: [
+          { src: hygoP12, alt: 'Hygo Page 12' },
+          { src: hygoP13, alt: 'Hygo Page 13' },
+          { src: hygoP14, alt: 'Hygo Page 14' },
+        ]
+      },
     ],
     description: 'Hygo Case Study'
   },
@@ -58,28 +86,6 @@ const caseStudies = {
     image: collegeCupidImage,
     description: 'College Cupid Case Study'
   }
-};
-
-// Page Image Component using react-lazy-load-image-component
-const PageImage = ({ src, alt, pageNumber }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  return (
-    <div 
-      className={`page-container ${isLoaded ? 'loaded' : ''}`}
-      id={`page-${pageNumber}`}
-    >
-      <LazyLoadImage
-        src={src}
-        alt={alt}
-        effect="blur"
-        threshold={200}
-        onLoad={() => setIsLoaded(true)}
-        wrapperClassName="lazy-load-wrapper"
-        className="case-study-image"
-      />
-    </div>
-  );
 };
 
 const CaseStudy = () => {
@@ -104,7 +110,7 @@ const CaseStudy = () => {
     // Preload the first image only
     if (hasMultiplePages) {
       const img = new Image();
-      img.src = currentCaseStudy.pages[0].src;
+      img.src = currentCaseStudy.pages[0].images[0].src;
       img.onload = () => {
         setImageLoaded(true);
       };
@@ -122,34 +128,95 @@ const CaseStudy = () => {
     setLoading(false);
   };
 
-  // Scroll spy for navbar
+  // Scroll spy for navbar using IntersectionObserver
   useEffect(() => {
-    if (!hasMultiplePages) return;
+    if (!hasMultiplePages || !contentRef.current) return;
 
-    const handleScroll = () => {
-      const pageElements = document.querySelectorAll('.page-container');
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-
-      pageElements.forEach((element) => {
-        const rect = element.getBoundingClientRect();
-        const elementTop = rect.top + window.scrollY;
-        const elementBottom = elementTop + rect.height;
-
-        if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
-          const pageId = element.id.replace('page-', '');
-          setActiveSection(parseInt(pageId));
-        }
-      });
+    const observerOptions = {
+      root: contentRef.current,
+      rootMargin: '-10% 0px -70% 0px', // Trigger when section enters the top 10-30% range
+      threshold: Array.from({ length: 21 }, (_, i) => i * 0.05) // More granular thresholds (0, 0.05, 0.1, ..., 1)
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Store all observed entries for more intelligent decision making
+    const intersectingEntries = new Map();
+
+    const observerCallback = (entries) => {
+      // Update the map with current intersection states
+      entries.forEach((entry) => {
+        const pageId = parseInt(entry.target.id.replace('page-', ''));
+        
+        if (entry.isIntersecting) {
+          intersectingEntries.set(pageId, {
+            ratio: entry.intersectionRatio,
+            boundingRect: entry.boundingClientRect,
+            rootBounds: entry.rootBounds
+          });
+        } else {
+          intersectingEntries.delete(pageId);
+        }
+      });
+
+      // Find the most appropriate active section
+      if (intersectingEntries.size > 0) {
+        // Convert to array and sort by page ID
+        const sortedEntries = Array.from(intersectingEntries.entries()).sort((a, b) => a[0] - b[0]);
+        
+        // Prioritize sections that are near the top of the viewport
+        let bestSection = sortedEntries[0][0];
+        let bestScore = -Infinity;
+
+        sortedEntries.forEach(([pageId, data]) => {
+          // Calculate a score based on:
+          // 1. Intersection ratio (higher is better)
+          // 2. Position relative to viewport top (closer to top is better)
+          const rootTop = data.rootBounds?.top || 0;
+          const rootHeight = data.rootBounds?.height || contentRef.current.clientHeight;
+          const distanceFromTop = Math.abs(data.boundingRect.top - rootTop);
+          const normalizedDistance = 1 - Math.min(distanceFromTop / rootHeight, 1);
+          
+          // Weighted score: 60% intersection ratio, 40% proximity to top
+          const score = (data.ratio * 0.6) + (normalizedDistance * 0.4);
+          
+          if (score > bestScore) {
+            bestScore = score;
+            bestSection = pageId;
+          }
+        });
+
+        setActiveSection(bestSection);
+      }
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all page containers
+    const pageElements = contentRef.current.querySelectorAll('.page-container');
+    pageElements.forEach((element) => observer.observe(element));
+
+    return () => {
+      intersectingEntries.clear();
+      pageElements.forEach((element) => observer.unobserve(element));
+      observer.disconnect();
+    };
   }, [hasMultiplePages]);
 
   const scrollToPage = (pageNumber) => {
+    if (!contentRef.current) return;
+    
     const element = document.getElementById(`page-${pageNumber}`);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const container = contentRef.current;
+      const elementTop = element.offsetTop;
+      
+      // Smooth scroll within the container
+      container.scrollTo({
+        top: elementTop,
+        behavior: 'smooth'
+      });
+      
+      // Immediately update active section
+      setActiveSection(pageNumber);
     }
   };
 
@@ -205,7 +272,7 @@ const CaseStudy = () => {
                   <div key={page.id}>
                     <button
                       className={`nav-item ${activeSection === page.id ? 'active' : ''}`}
-                      onClick={() => scrollToPage(page.id)}
+                      // onClick={() => scrollToPage(page.id)}
                       title={page.title || `Page ${page.id}`}
                       aria-label={`Go to ${page.title || `page ${page.id}`}`}
                     />
@@ -217,14 +284,25 @@ const CaseStudy = () => {
 
           <div className="images-container">
             {hasMultiplePages ? (
-              // Render all pages, including those not in the navbar
-              currentCaseStudy.allPages.map((page) => (
-                <PageImage
-                  key={page.id}
-                  src={page.src}
-                  alt={page.alt}
-                  pageNumber={page.id}
-                />
+              // Render sections with their grouped images
+              currentCaseStudy.pages.map((section) => (
+                <div 
+                  key={section.id}
+                  className="page-container"
+                  id={`page-${section.id}`}
+                >
+                  {section.images.map((image, index) => (
+                    <LazyLoadImage
+                      key={`${section.id}-${index}`}
+                      src={image.src}
+                      alt={image.alt}
+                      effect="blur"
+                      threshold={200}
+                      wrapperClassName="lazy-load-wrapper"
+                      className="case-study-image"
+                    />
+                  ))}
+                </div>
               ))
             ) : (
               // Single image fallback

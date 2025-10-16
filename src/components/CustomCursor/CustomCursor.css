@@ -31,7 +31,7 @@
 }
 
 .cursor-text {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   font-family: 'DM Sans', sans-serif;
   /* color: black; */
@@ -39,6 +39,7 @@
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.3s ease;
+  line-height: 1; /* Decreased line spacing */
 }
 
 .custom-cursor.project .cursor-text {
