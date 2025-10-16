@@ -1,6 +1,6 @@
 {
-  "homepage": "https://heet434.github.io/ad_portfolio/",
-  "name": "ad_portfolio",
+  "homepage": "https://aditi2011.github.io/portfolio/",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,6 +17,7 @@
     "react-dom": "^19.1.1",
     "react-gridlines": "^1.1.7",
     "react-intersection-observer": "^9.16.0",
+    "react-lazy-load-image-component": "^1.6.3",
     "react-router-dom": "^7.9.4",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.3",

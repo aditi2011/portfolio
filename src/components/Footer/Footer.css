@@ -11,8 +11,10 @@
 }
 
 .footer-content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  display: flex;
+  justify-content: space-between;
   gap: var(--spacing-3xl);
   margin-bottom: var(--spacing-3xl);
 }
@@ -55,7 +57,9 @@
 }
 
 .footer-link:hover {
-  color: var(--color-accent);
+  /* color: var(--color-accent); */
+  /* increase font weight on hover */
+  font-weight: var(--font-weight-medium);
 }
 
 .footer-button {

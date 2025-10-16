@@ -14,8 +14,8 @@ const Footer = () => {
   const quickLinks = [
     { id: 'home', title: 'Home', offset: 40 },
     { id: 'my-work', title: 'My Work', offset: 0 },
-    { id: 'mentor-work', title: 'Mentor Work', offset: 0 },
-    { id: 'about-me', title: 'About Me', offset: 130 },
+    // { id: 'mentor-work', title: 'Mentor Work', offset: 0 },
+    { id: 'about-me', title: 'About Me', offset: 0 },
   ];
 
   const handleCaseStudyClick = (caseStudyId) => {
@@ -78,7 +78,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:aditi2011agrawal@gmail.com"
                   className="footer-link"
                 >
                   Email

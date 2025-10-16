@@ -1,121 +1,65 @@
 .loading-page {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
+  background: #060010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  z-index: 9998;
-  background-color: #060010;
+  z-index: 9999;
 }
 
 .loading-columns {
   display: flex;
   width: 100%;
-  height: fit-content;
-  gap: 0;
+  height: 100%;
+  gap: 2rem;
 }
 
+/* Columns hidden initially */
 .loading-column {
   flex: 1;
+  opacity: 0;
+  /* transform: translateY(50px); */
+  /* transition: all 1s ease; */
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  position: relative;
 }
 
-.image-wrapper {
-  width: 100%;
-  height: auto;
-  flex-shrink: 0;
-  overflow: hidden;
+.loading-column.visible {
+  opacity: 1;
+  transform: translateY(-50%);
 }
 
+/* Image containers */
 .image-wrapper img {
   width: 100%;
   height: auto;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
 }
 
-/* Scrolling Down Animation */
-.scroll-down {
-  animation: scrollDown 30s linear infinite;
+/* Scroll phase animation */
+.reveal-phase .scroll-down {
+  animation: scrollDownReveal 4s linear forwards;
 }
 
-@keyframes scrollDown {
-  0% {
-    transform: translateY(-50%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
+.reveal-phase .scroll-up {
+  animation: scrollUpReveal 4s linear forwards;
 }
 
-/* Scrolling Up Animation */
-.scroll-up {
-  animation: scrollUp 30s linear infinite;
+/* Directional keyframes */
+@keyframes scrollDownReveal {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(-100%); }
 }
 
-@keyframes scrollUp {
-  0% {
-    transform: translateY(-50%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
+@keyframes scrollUpReveal {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0%); }
 }
 
-/* Loading Overlay */
-.loading-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
-  pointer-events: none;
-  z-index: 10;
-}
-
-.loading-text {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .loading-text {
-    font-size: 2rem;
-  }
-  
-  .image-wrapper {
-    aspect-ratio: 3/4;
-  }
-  
-  .scroll-down,
-  .scroll-up {
-    animation-duration: 15s;
-  }
-}
-
-/* Optional: Add blur effect on edges */
+/* Smooth fade overlay for dark edges */
 .loading-page::before,
 .loading-page::after {
   content: '';
@@ -123,16 +67,16 @@
   left: 0;
   width: 100%;
   height: 100px;
-  z-index: 5;
   pointer-events: none;
+  z-index: 5;
 }
 
 .loading-page::before {
   top: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
 }
 
 .loading-page::after {
   bottom: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
 }

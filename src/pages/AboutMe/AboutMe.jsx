@@ -12,13 +12,13 @@ import './AboutMe.css';
 const AboutMe = () => {
   const skills = [
     { name: 'Figma', icon: Figma },
+    { name: 'Adobe XD', icon: XD },
     { name: 'Photoshop', icon: PS },
     { name: 'Illustrator', icon: AI },
-    { name: 'After Effects', icon: AE },
+    // { name: 'After Effects', icon: AE },
     { name: 'Premiere Pro', icon: PR },
     { name: 'Framer', icon: Framer },
-    { name: 'Adobe XD', icon: XD },
-    // { name: 'Webflow', icon: Webflow },
+    { name: 'Webflow', icon: Webflow },
   ];
 
   return (
@@ -34,7 +34,8 @@ const AboutMe = () => {
               aesthetics with functionality.
             </p>
             <p className="about-me-description">
-              Today, as the Lead Product Designer at SWC IITG, I believe the best solutions come from truly understanding people; their struggles, motivations, and the context of their lives.
+              I believe the best solutions come from truly understanding people; their struggles, motivations, and the context of their lives. Whether I'm sketching ideas, diving into user research, or prototyping solutions, I'm driven by the possibility of creating something that genuinely makes someone's day a little easier.
+              {/* Today, as the Lead Product Designer at SWC IITG, I believe the best solutions come from truly understanding people; their struggles, motivations, and the context of their lives. */}
                {/* Whether I'm sketching ideas, diving into user research, or prototyping solutions, I'm driven by the possibility of creating something that genuinely makes someone's day a little easier */}
             </p>
             
