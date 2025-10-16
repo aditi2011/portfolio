@@ -473,8 +473,8 @@
 
   /* Even smaller for mobile */
   .page-navigation {
-    top: 60px; /* Align below the close button */
-    right: 15px; /* Adjusted for mobile view */
+    top: 100px; /* Align below the close button */
+    right: 20px; /* Adjusted for mobile view */
   }
 
   /* Hide TOC panel completely on mobile */
