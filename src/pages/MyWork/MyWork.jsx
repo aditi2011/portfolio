@@ -8,8 +8,11 @@ const MyWork = () => {
   const projectRefs = useRef([]);
   const navigate = useNavigate();
 
-  const handleProjectClick = (caseStudyId) => {
-    if (caseStudyId) {
+  const handleProjectClick = (caseStudyId, externalLink) => {
+    if (externalLink) {
+      // Open external link in a new tab
+      window.open(externalLink, '_blank');
+    } else if (caseStudyId) {
       // Open case study in a new tab
       const baseUrl = window.location.origin + window.location.pathname;
       window.open(`${baseUrl}#/case-study/${caseStudyId}`, '_blank');
@@ -66,7 +69,8 @@ const MyWork = () => {
         'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
       ],
       gradient: 'linear-gradient(135deg, #0033FF 0%, white 50%, #0033FF 100%)',
-      imagePosition: 'right'
+      imagePosition: 'right',
+      externalLink: 'https://drive.google.com/drive/folders/162huQ2yjEcXI7U3GDOkH5pKjtKb67wgH?usp=drive_link'
     }
   ];
 
@@ -110,8 +114,8 @@ const MyWork = () => {
               key={project.id}
               id={project.idName}
               ref={(el) => (projectRefs.current[index] = el)}
-              className={`project-card ${project.imagePosition === 'right' ? 'reverse' : ''} ${project.caseStudyId ? 'clickable' : ''}`}
-              onClick={() => handleProjectClick(project.caseStudyId)}
+              className={`project-card ${project.imagePosition === 'right' ? 'reverse' : ''} ${project.caseStudyId || project.externalLink ? 'clickable' : ''}`}
+              onClick={() => handleProjectClick(project.caseStudyId, project.externalLink)}
             >
               <div className="project-image">
                 {project.image ? (

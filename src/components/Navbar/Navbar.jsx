@@ -70,7 +70,7 @@ export default function Navbar() {
                         <div className='navbar-item-left'>
                             <ul>
                                 <li className='navbar-item'>
-                                    <a href="https://www.linkedin.com/in/aditiagrawal20/" className={`navbar-text ${isInMentorSection ? 'dark-text' : ''}`} style={{ textDecoration: 'none' }}>
+                                    <a href="https://www.linkedin.com/in/aditiagrawal20/" className={`navbar-text ${isInMentorSection ? 'dark-text' : ''}`} style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
                                         Open for work
                                     </a>
                                 </li>
