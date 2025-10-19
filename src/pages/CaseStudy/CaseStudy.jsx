@@ -100,7 +100,7 @@ const caseStudies = {
     ],
     description: 'Hygo Case Study'
   },
-  'college-cupid': {
+  'cupid': {
     title: 'College Cupid',
     // 
     pages: [

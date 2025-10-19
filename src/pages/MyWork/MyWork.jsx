@@ -34,7 +34,7 @@ const MyWork = () => {
     },
     {
       id: 2,
-      idName: 'college-cupid',
+      idName: 'cupid',
       title: 'College Cupid',
       description: 'An app for managers and artists to seamlessly book gigs through.',
       details: [
@@ -43,7 +43,7 @@ const MyWork = () => {
       ],
       image: 'https://api.builder.io/api/v1/image/assets/TEMP/d99d94e70887ed052f714946c825424758644ebf?width=1150',
       imagePosition: 'right',
-      caseStudyId: 'college-cupid'
+      caseStudyId: 'cupid'
     },
     {
       id: 3,

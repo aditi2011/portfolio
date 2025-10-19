@@ -7,7 +7,7 @@ const Footer = () => {
   const navigate = useNavigate();
 
   const caseStudies = [
-    { id: 'college-cupid', title: 'College Cupid' },
+    { id: 'cupid', title: 'College Cupid' },
     { id: 'hygo', title: 'Hygo' },
   ];
 
