@@ -110,12 +110,6 @@ const caseStudies = {
         images: [
           { src: cupidP1, alt: 'College Cupid Page 1' },
           { src: cupidP2, alt: 'College Cupid Page 2' },
-        ]
-      },
-      { 
-        id: 2, 
-        title: 'Process',
-        images: [
           { src: cupidP3, alt: 'College Cupid Page 3' },
           { src: cupidP4, alt: 'College Cupid Page 4' },
         ]
@@ -144,20 +138,8 @@ const caseStudies = {
         title: 'User Flow',
         images: [
           { src: cupidP12, alt: 'College Cupid Page 12' },
-        ]
-      },
-      { 
-        id: 6, 
-        title: 'Wireframes',
-        images: [
           { src: cupidP13, alt: 'College Cupid Page 13' },
           { src: cupidP14, alt: 'College Cupid Page 14' },
-        ]
-      },
-      { 
-        id: 7, 
-        title: 'Visual Language',
-        images: [
           { src: cupidP15, alt: 'College Cupid Page 15' },
         ]
       },

@@ -277,7 +277,7 @@
 
 .toc-item:hover .toc-text{
   color: rgba(0, 0, 0, 0.9);
-  font-size: 1.25rem;
+  /* font-size: 1.25rem; */
   font-weight: 500;
 }
 
@@ -291,9 +291,9 @@
   color: rgba(0, 0, 0, 1);
 }
 
-.toc-item.active:hover .toc-text {
+/* .toc-item.active:hover .toc-text {
   font-size: 1.25rem;
-}
+} */
 
 .toc-text {
   font-size: 1rem;
