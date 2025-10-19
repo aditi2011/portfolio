@@ -24,10 +24,11 @@ const MyWork = () => {
       id: 1,
       idName: 'staged',
       title: 'Staged',
-      description: 'An app for managers and artists to seamlessly book gigs.',
+      // description: 'An app for managers and artists to seamlessly book gigs.',
       details: [
-        'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
-        'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
+        // 'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
+        // 'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
+        "An artist gig booking platform designed for Guwahati's live music scene, where 85% of independent artists struggle with irregular gigs while venue managers can't trust unknown talent. The app builds verified profiles and automatic scheduling to transform a fragmented ecosystem into a thriving creative community."
       ],
       image: 'https://api.builder.io/api/v1/image/assets/TEMP/9a88f202799e5a5090012930da7f98fc2efea025?width=1230',
       imagePosition: 'left'
@@ -36,10 +37,11 @@ const MyWork = () => {
       id: 2,
       idName: 'cupid',
       title: 'College Cupid',
-      description: 'An app for managers and artists to seamlessly book gigs through.',
+      // description: 'An app for managers and artists to seamlessly book gigs through.',
       details: [
-        'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
-        'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
+        // 'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
+        // 'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
+        "Redesigned College Cupid, a campus-only dating app that opens during events like Valentine’s Day and prom to help students connect meaningfully. The initial rushed version saw poor engagement; my redesign improved experience, authenticity, and usability, increasing monthly active users to over 4,000."
       ],
       image: 'https://api.builder.io/api/v1/image/assets/TEMP/d99d94e70887ed052f714946c825424758644ebf?width=1150',
       imagePosition: 'right',
@@ -49,10 +51,11 @@ const MyWork = () => {
       id: 3,
       idName: 'hygo',
       title: 'Hygo',
-      description: 'An app for managers and artists to seamlessly book gigs through.',
+      // description: 'An app for managers and artists to seamlessly book gigs through.',
       details: [
-        'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
-        'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
+        // 'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
+        // 'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
+        "Designed HyGo’s landing website to educate users and enable online sales through clean, trust-driven UI. HyGo is a sustainable hygiene startup offering one-time-use, flushable toilet seat covers made from biodegradable waste like cotton residue and water hyacinth, addressing poor public washroom hygiene across India’s ₹200 Cr market."
       ],
       gradient: 'linear-gradient(135deg, #36238E 0%, #936DC8 33%, #C2B5FF 66%, #BED836 100%)',
       imagePosition: 'left',
@@ -63,10 +66,11 @@ const MyWork = () => {
       idName: 'rarelink',
       title: 'RareLink',
       subtitle: '(Ongoing)',
-      description: 'An app for managers and artists to seamlessly book gigs through.',
+      // description: 'An app for managers and artists to seamlessly book gigs through.',
       details: [
-        'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
-        'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
+        // 'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
+        // 'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
+        "Designed a community platform for people with rare diseases, addressing the lack of peer support, verified information, and accessible specialists. Through research, surveys, and user interviews, I defined features like peer-led forums, symptom tracking, and AI-assisted support to foster trust, connection, and mental well-being among patients and caregivers."
       ],
       gradient: 'linear-gradient(135deg, #0033FF 0%, white 50%, #0033FF 100%)',
       imagePosition: 'right',
