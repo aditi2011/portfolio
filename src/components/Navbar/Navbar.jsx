@@ -130,7 +130,16 @@ export default function Navbar() {
                                     }}
                                 >
                                     <div className='navbar-item-resume-button'>
-                                        <span className="navbar-text">Resume</span>
+                                        <a 
+                                            href={require('../../assets/resume/220205001_2.pdf')} 
+                                            download="Resume_Aditi_Agrawal.pdf" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="navbar-text"
+                                            style = {{ textDecoration: 'none' }}
+                                        >
+                                            Resume
+                                        </a>
                                     </div>
                                 </li>
                             </ul>
