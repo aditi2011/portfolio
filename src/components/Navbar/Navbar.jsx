@@ -131,7 +131,7 @@ export default function Navbar() {
                                 >
                                     <div className='navbar-item-resume-button'>
                                         <a 
-                                            href={require('../../assets/resume/220205001_2.pdf')} 
+                                            href={require('../../assets/resume/aditi_ag.pdf')} 
                                             target="_blank" 
                                             rel="noopener noreferrer"
                                             className="navbar-text"
