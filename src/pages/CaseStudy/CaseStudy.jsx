@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 // import hygoImage from '../../assets/case_studies/hygo_2x.png';
-import collegeCupidImage from '../../assets/case_studies/cupid_2x.png';
+// import collegeCupidImage from '../../assets/case_studies/cupid_2x.png';
 import LoadingPage from '../Loading/LoadingPage';
 import './CaseStudy.css';
 
@@ -22,6 +22,25 @@ import hygoP11 from '../../assets/case_studies/hygo/p11.png';
 import hygoP12 from '../../assets/case_studies/hygo/p12.png';
 import hygoP13 from '../../assets/case_studies/hygo/p13.png';
 import hygoP14 from '../../assets/case_studies/hygo/p14.png';
+
+// Import college cupid image
+import cupidP1 from '../../assets/case_studies/cupid/Case Study Template.jpg';
+import cupidP2 from '../../assets/case_studies/cupid/Case Study Template-1.jpg';
+import cupidP3 from '../../assets/case_studies/cupid/Case Study Template-2.jpg';
+import cupidP4 from '../../assets/case_studies/cupid/Case Study Template-3.jpg';
+import cupidP5 from '../../assets/case_studies/cupid/Case Study Template-4.jpg';
+import cupidP6 from '../../assets/case_studies/cupid/Case Study Template-5.jpg';
+import cupidP7 from '../../assets/case_studies/cupid/Case Study Template-6.jpg';
+import cupidP8 from '../../assets/case_studies/cupid/Case Study Template-7.jpg';
+import cupidP9 from '../../assets/case_studies/cupid/Case Study Template-8.jpg';
+import cupidP10 from '../../assets/case_studies/cupid/Case Study Template-9.jpg';
+import cupidP11 from '../../assets/case_studies/cupid/Case Study Template-10.jpg';
+import cupidP12 from '../../assets/case_studies/cupid/Case Study Template-11.jpg';
+import cupidP13 from '../../assets/case_studies/cupid/Case Study Template-12.jpg';
+import cupidP14 from '../../assets/case_studies/cupid/Case Study Template-13.jpg';
+import cupidP15 from '../../assets/case_studies/cupid/Case Study Template-14.jpg';
+import cupidP16 from '../../assets/case_studies/cupid/Case Study Template-15.jpg';
+import cupidP17 from '../../assets/case_studies/cupid/Case Study Template-16.jpg';
 
 // Case study data mapping
 const caseStudies = {
@@ -83,7 +102,74 @@ const caseStudies = {
   },
   'college-cupid': {
     title: 'College Cupid',
-    image: collegeCupidImage,
+    // 
+    pages: [
+      { 
+        id: 1, 
+        title: 'Overview',
+        images: [
+          { src: cupidP1, alt: 'College Cupid Page 1' },
+          { src: cupidP2, alt: 'College Cupid Page 2' },
+        ]
+      },
+      { 
+        id: 2, 
+        title: 'Process',
+        images: [
+          { src: cupidP3, alt: 'College Cupid Page 3' },
+          { src: cupidP4, alt: 'College Cupid Page 4' },
+        ]
+      },
+      { 
+        id: 3, 
+        title: 'Research',
+        images: [
+          { src: cupidP5, alt: 'College Cupid Page 5' },
+          { src: cupidP6, alt: 'College Cupid Page 6' },
+          { src: cupidP7, alt: 'College Cupid Page 7' },
+          { src: cupidP8, alt: 'College Cupid Page 8' },
+          { src: cupidP9, alt: 'College Cupid Page 9' },
+        ]
+      },
+      { 
+        id: 4, 
+        title: 'Problem',
+        images: [
+          { src: cupidP10, alt: 'College Cupid Page 10' },
+          { src: cupidP11, alt: 'College Cupid Page 11' },
+        ]
+      },
+      { 
+        id: 5, 
+        title: 'User Flow',
+        images: [
+          { src: cupidP12, alt: 'College Cupid Page 12' },
+        ]
+      },
+      { 
+        id: 6, 
+        title: 'Wireframes',
+        images: [
+          { src: cupidP13, alt: 'College Cupid Page 13' },
+          { src: cupidP14, alt: 'College Cupid Page 14' },
+        ]
+      },
+      { 
+        id: 7, 
+        title: 'Visual Language',
+        images: [
+          { src: cupidP15, alt: 'College Cupid Page 15' },
+        ]
+      },
+      { 
+        id: 8, 
+        title: 'Final Screens',
+        images: [
+          { src: cupidP16, alt: 'College Cupid Page 16' },
+          { src: cupidP17, alt: 'College Cupid Page 17' },
+        ]
+      },
+    ],
     description: 'College Cupid Case Study'
   }
 };
