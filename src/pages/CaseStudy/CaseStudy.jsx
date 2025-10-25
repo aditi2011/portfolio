@@ -42,6 +42,26 @@ import cupidP15 from '../../assets/case_studies/cupid/Case Study Template-14.jpg
 import cupidP16 from '../../assets/case_studies/cupid/Case Study Template-15.jpg';
 import cupidP17 from '../../assets/case_studies/cupid/Case Study Template-16.jpg';
 
+// Import Staged images
+import stagedP1 from '../../assets/case_studies/staged_1.5x/Case Study.jpg';
+import stagedP2 from '../../assets/case_studies/staged_1.5x/Case Study-1.jpg';
+import stagedP3 from '../../assets/case_studies/staged_1.5x/Case Study-2.jpg';
+import stagedP4 from '../../assets/case_studies/staged_1.5x/Case Study-3.jpg';
+import stagedP5 from '../../assets/case_studies/staged_1.5x/Case Study-4.jpg';
+import stagedP6 from '../../assets/case_studies/staged_1.5x/Case Study-5.jpg';
+import stagedP7 from '../../assets/case_studies/staged_1.5x/Case Study-6.jpg';
+import stagedP8 from '../../assets/case_studies/staged_1.5x/Case Study-7.jpg';
+import stagedP9 from '../../assets/case_studies/staged_1.5x/Case Study-8.jpg';
+import stagedP10 from '../../assets/case_studies/staged_1.5x/Case Study-9.jpg';
+import stagedP11 from '../../assets/case_studies/staged_1.5x/Case Study-10.jpg';
+import stagedP12 from '../../assets/case_studies/staged_1.5x/Case Study-11.jpg';
+import stagedP13 from '../../assets/case_studies/staged_1.5x/Case Study-12.jpg';
+import stagedP14 from '../../assets/case_studies/staged_1.5x/Case Study-13.jpg';
+import stagedP15 from '../../assets/case_studies/staged_1.5x/Case Study-14.jpg';
+import stagedP16 from '../../assets/case_studies/staged_1.5x/Case Study-15.jpg';
+import stagedP17 from '../../assets/case_studies/staged_1.5x/Case Study-16.jpg';
+import stagedP18 from '../../assets/case_studies/staged_1.5x/Case Study-17.jpg';
+
 // Case study data mapping
 const caseStudies = {
   'hygo': {
@@ -153,7 +173,56 @@ const caseStudies = {
       },
     ],
     description: 'College Cupid Case Study'
-  }
+  },
+  'staged': {
+    title: 'Staged',
+    darkTheme: true,
+    pages: [
+      { 
+        id: 1, 
+        title: 'Overview',
+        images: [
+          { src: stagedP1, alt: 'Staged Page 1' },
+          { src: stagedP2, alt: 'Staged Page 2' },
+        ]
+      },
+      { 
+        id: 3, 
+        title: 'Problem Space',
+        images: [
+          { src: stagedP3, alt: 'Staged Page 3' },
+          { src: stagedP4, alt: 'Staged Page 4' },
+          { src: stagedP5, alt: 'Staged Page 5' },
+          { src: stagedP6, alt: 'Staged Page 6' },
+          { src: stagedP7, alt: 'Staged Page 7' },
+          { src: stagedP8, alt: 'Staged Page 8' },
+          { src: stagedP9, alt: 'Staged Page 9' },
+          { src: stagedP10, alt: 'Staged Page 10' },
+          { src: stagedP11, alt: 'Staged Page 11' },
+        ]
+      },
+      { 
+        id: 12, 
+        title: 'Solution Space',
+        images: [
+          { src: stagedP12, alt: 'Staged Page 12' },
+          { src: stagedP13, alt: 'Staged Page 13' },
+          { src: stagedP14, alt: 'Staged Page 14' },
+        ]
+      },
+      {
+        id: 15,
+        title: 'Screens',
+        images: [
+          { src: stagedP15, alt: 'Staged Page 15' },
+          { src: stagedP16, alt: 'Staged Page 16' },
+          { src: stagedP17, alt: 'Staged Page 17' },
+          { src: stagedP18, alt: 'Staged Page 18' },
+        ]
+      }
+    ],
+    description: 'Staged Case Study'
+  },
 };
 
 const CaseStudy = () => {
@@ -299,7 +368,7 @@ const CaseStudy = () => {
   }
 
   return (
-    <div className="case-study-container">
+    <div className={`case-study-container ${currentCaseStudy.darkTheme ? 'dark' : ''}`}>
       {loading ? (
         <LoadingPage onFinish={handleLoadingComplete} />
       ) : (

@@ -31,7 +31,8 @@ const MyWork = () => {
         "An artist gig booking platform designed for Guwahati's live music scene, where 85% of independent artists struggle with irregular gigs while venue managers can't trust unknown talent. The app builds verified profiles and automatic scheduling to transform a fragmented ecosystem into a thriving creative community."
       ],
       image: 'https://api.builder.io/api/v1/image/assets/TEMP/9a88f202799e5a5090012930da7f98fc2efea025?width=1230',
-      imagePosition: 'left'
+      imagePosition: 'left',
+      caseStudyId: 'staged'
     },
     {
       id: 2,
