@@ -164,6 +164,13 @@
   font-weight: var(--font-weight-medium);
 }
 
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-xl);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .about-me-content {

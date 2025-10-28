@@ -6,6 +6,7 @@ import Figma from '../../assets/icons/figma.png';
 import Framer from '../../assets/icons/f.png';
 import XD from '../../assets/icons/xd.png';
 import Webflow from '../../assets/icons/w.png';
+import AboutMeImage from '../../assets/about_me.png';
 
 import './AboutMe.css';
 
@@ -54,7 +55,7 @@ const AboutMe = () => {
           
           <div className="about-me-image">
             <div className="image-placeholder">
-              <span>Your Photo Here</span>
+              <img src={AboutMeImage} alt="About Me" />
             </div>
           </div>
         </div>

@@ -1,8 +1,13 @@
 import ScrollVelocity from '../../components/effects/ScrollVelocity';
 import GridLines from 'react-gridlines';
+import StagedThumb from '../../assets/project_thumbs/staged_thumb.jpg';
+import CupidThumb from '../../assets/project_thumbs/cupid_thumb.jpg';
+import HygoThumb from '../../assets/project_thumbs/hygo_thumb.jpg';
+// import RarelinkThumb from '../../assets/project_thumbs/rarelink_thumb.jpg';
 import './MyWork.css';
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { image } from 'framer-motion/client';
 
 const MyWork = () => {
   const projectRefs = useRef([]);
@@ -30,7 +35,8 @@ const MyWork = () => {
         // 'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
         "An artist gig booking platform designed for Guwahati's live music scene, where 85% of independent artists struggle with irregular gigs while venue managers can't trust unknown talent. The app builds verified profiles and automatic scheduling to transform a fragmented ecosystem into a thriving creative community."
       ],
-      image: 'https://api.builder.io/api/v1/image/assets/TEMP/9a88f202799e5a5090012930da7f98fc2efea025?width=1230',
+      // image: 'https://api.builder.io/api/v1/image/assets/TEMP/9a88f202799e5a5090012930da7f98fc2efea025?width=1230',
+      image: StagedThumb,
       imagePosition: 'left',
       caseStudyId: 'staged'
     },
@@ -44,7 +50,8 @@ const MyWork = () => {
         // 'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
         "Redesigned College Cupid, a campus-only dating app that opens during events like Valentine’s Day and prom to help students connect meaningfully. The initial rushed version saw poor engagement; my redesign improved experience, authenticity, and usability, increasing monthly active users to over 4,000."
       ],
-      image: 'https://api.builder.io/api/v1/image/assets/TEMP/d99d94e70887ed052f714946c825424758644ebf?width=1150',
+      // image: 'https://api.builder.io/api/v1/image/assets/TEMP/d99d94e70887ed052f714946c825424758644ebf?width=1150',
+      image: CupidThumb,
       imagePosition: 'right',
       caseStudyId: 'cupid'
     },
@@ -59,6 +66,7 @@ const MyWork = () => {
         "Designed HyGo’s landing website to educate users and enable online sales through clean, trust-driven UI. HyGo is a sustainable hygiene startup offering one-time-use, flushable toilet seat covers made from biodegradable waste like cotton residue and water hyacinth, addressing poor public washroom hygiene across India’s ₹200 Cr market."
       ],
       gradient: 'linear-gradient(135deg, #36238E 0%, #936DC8 33%, #C2B5FF 66%, #BED836 100%)',
+      image: HygoThumb,
       imagePosition: 'left',
       caseStudyId: 'hygo'
     },

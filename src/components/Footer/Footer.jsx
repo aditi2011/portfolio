@@ -9,6 +9,7 @@ const Footer = () => {
   const caseStudies = [
     { id: 'cupid', title: 'College Cupid' },
     { id: 'hygo', title: 'Hygo' },
+    { id: 'staged', title: 'Staged' }
   ];
 
   const quickLinks = [
