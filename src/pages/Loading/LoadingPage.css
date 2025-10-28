@@ -155,11 +155,12 @@
 
 @media (max-width: 540px) {
   .loading-page {
-    padding: 1.5rem;
+    padding: 0 1rem;
   }
 
   .loading-columns {
-    max-height: 65vh;
+    height: 100vh;
+    max-height: 100vh;
   }
 
   .image-wrapper {

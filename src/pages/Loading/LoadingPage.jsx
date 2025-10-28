@@ -11,7 +11,8 @@ import stagedThumb2 from '../../assets/staged_thumb2.jpeg';
 
 const LoadingPage = ({ onFinish }) => {
   const images = [bookThumb, cupidThumb, hygoThumb, lohitThumb, rareThumb, stagedThumb, stagedThumb2];
-  const columnImages = [...images, ...images];
+  // Triple the images for taller screens (especially phones)
+  const columnImages = [...images, ...images, ...images];
   const columnDirections = ['up', 'down', 'up'];
 
   const [loadedCols, setLoadedCols] = useState(0);

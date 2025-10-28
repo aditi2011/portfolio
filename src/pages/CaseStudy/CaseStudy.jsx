@@ -178,17 +178,24 @@ const caseStudies = {
     title: 'Staged',
     darkTheme: true,
     pages: [
-      { 
+      {
+        id: 0,
+        title: 'Cover',
+        images: [
+          { src: stagedP1, alt: 'Staged Cover Page' },
+        ]
+      },
+      {
         id: 1, 
         title: 'Overview',
         images: [
-          { src: stagedP1, alt: 'Staged Page 1' },
+          // { src: stagedP1, alt: 'Staged Page 1' },
           { src: stagedP2, alt: 'Staged Page 2' },
         ]
       },
       { 
         id: 3, 
-        title: 'Problem Space',
+        title: 'Secondary Research',
         images: [
           { src: stagedP3, alt: 'Staged Page 3' },
           { src: stagedP4, alt: 'Staged Page 4' },
@@ -197,13 +204,21 @@ const caseStudies = {
           { src: stagedP7, alt: 'Staged Page 7' },
           { src: stagedP8, alt: 'Staged Page 8' },
           { src: stagedP9, alt: 'Staged Page 9' },
+          // { src: stagedP10, alt: 'Staged Page 10' },
+          // { src: stagedP11, alt: 'Staged Page 11' },
+        ]
+      },
+      {
+        id: 10,
+        title: 'User Research',
+        images: [
           { src: stagedP10, alt: 'Staged Page 10' },
           { src: stagedP11, alt: 'Staged Page 11' },
         ]
       },
-      { 
-        id: 12, 
-        title: 'Solution Space',
+      {
+        id: 12,
+        title: 'Ideation',
         images: [
           { src: stagedP12, alt: 'Staged Page 12' },
           { src: stagedP13, alt: 'Staged Page 13' },
@@ -409,7 +424,12 @@ const CaseStudy = () => {
                   <div key={page.id}>
                     <button
                       className={`nav-item ${activeSection === page.id ? 'active' : ''}`}
-                      // onClick={() => scrollToPage(page.id)}
+                      onClick={() => {
+                        // Only enable click on mobile (phone breakpoint)
+                        if (window.innerWidth <= 480) {
+                          scrollToPage(page.id);
+                        }
+                      }}
                       title={page.title || `Page ${page.id}`}
                       aria-label={`Go to ${page.title || `page ${page.id}`}`}
                     />

@@ -503,6 +503,7 @@
 
   .nav-item {
     width: 20px;
+    cursor: pointer; /* Enable pointer cursor on mobile for clickable bars */
   }
 
   .nav-item.active {
