@@ -24,7 +24,12 @@ const CustomCursor = () => {
         target.closest('.clickable') ||
         target.closest('.project-card.clickable');
       
-      const isProject = target.closest('.project-card.clickable') !== null;
+      // Check if hovering over project image specifically
+      const isProjectImage = 
+        target.classList.contains('project-image') ||
+        target.closest('.project-image') !== null;
+      
+      const isProject = isProjectImage && target.closest('.project-card.clickable') !== null;
       
       setIsPointer(isClickable);
       setIsProjectCard(isProject);
