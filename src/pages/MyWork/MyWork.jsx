@@ -3,6 +3,7 @@ import GridLines from 'react-gridlines';
 import StagedThumb from '../../assets/project_thumbs/staged_thumb.jpg';
 import CupidThumb from '../../assets/project_thumbs/cupid_thumb.jpg';
 import HygoThumb from '../../assets/project_thumbs/hygo_thumb.jpg';
+import RarelinkThumb from '../../assets/project_thumbs/rarelink_thumb.jpg';
 // import RarelinkThumb from '../../assets/project_thumbs/rarelink_thumb.jpg';
 import './MyWork.css';
 import { useEffect, useRef } from 'react';
@@ -82,6 +83,7 @@ const MyWork = () => {
         "Designed a community platform for people with rare diseases, addressing the lack of peer support, verified information, and accessible specialists. Through research, surveys, and user interviews, I defined features like peer-led forums, symptom tracking, and AI-assisted support to foster trust, connection, and mental well-being among patients and caregivers."
       ],
       gradient: 'linear-gradient(135deg, #0033FF 0%, white 50%, #0033FF 100%)',
+      image: RarelinkThumb,
       imagePosition: 'right',
       externalLink: 'https://drive.google.com/drive/folders/162huQ2yjEcXI7U3GDOkH5pKjtKb67wgH?usp=drive_link'
     }
