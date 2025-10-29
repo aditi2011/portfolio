@@ -4,6 +4,7 @@ import ScrollVelocity from '../../components/effects/ScrollVelocity';
 import OneStop from "../../assets/mentor_thumbs/one_stop.png";
 import LibToken from "../../assets/mentor_thumbs/lib_token.png";
 import DesignSys from "../../assets/mentor_thumbs/design_sys.png";
+import NoDues from "../../assets/mentor_thumbs/no_dues.png";
 
 import './SWCWork.css';
 
@@ -25,7 +26,7 @@ const SWCWork = () => {
       title: "No Dues",
       description: ["~2000 Users", "Portal integration", "New feature", "For graduating students"],
       tags: ["2 Mentees", "6 Months"],
-      image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=300&fit=crop"
+      image: NoDues
     },
     {
       title: "Design System",
