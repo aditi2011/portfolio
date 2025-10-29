@@ -5,6 +5,7 @@ import OneStop from "../../assets/mentor_thumbs/one_stop.png";
 import LibToken from "../../assets/mentor_thumbs/lib_token.png";
 import DesignSys from "../../assets/mentor_thumbs/design_sys.png";
 import NoDues from "../../assets/mentor_thumbs/no_dues.png";
+import SAportal from "../../assets/mentor_thumbs/sa_portal.png";
 
 import './SWCWork.css';
 
@@ -38,7 +39,7 @@ const SWCWork = () => {
       title: "SA Portal",
       description: ["4000+ MAU", "Student Affairs Website", "Website Redesign", "50+ screens"],
       tags: ["4 Mentees", "2 Weeks"],
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop"
+      image: SAportal
     }
   ];
 
