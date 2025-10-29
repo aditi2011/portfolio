@@ -1,6 +1,10 @@
 import React from 'react';
 import HoverImageReveal from '../../components/HoverImageReveal/HoverImageReveal';
 import ScrollVelocity from '../../components/effects/ScrollVelocity';
+import OneStop from "../../assets/mentor_thumbs/one_stop.png";
+import LibToken from "../../assets/mentor_thumbs/lib_token.png";
+import DesignSys from "../../assets/mentor_thumbs/design_sys.png";
+
 import './SWCWork.css';
 
 const SWCWork = () => {
@@ -9,13 +13,13 @@ const SWCWork = () => {
       title: "OneStop",
       description: ["4000+ DAU", "Full App Redesign", "4 new features integrated", "250+ screens"],
       tags: ["2 Mentees", "8 Months"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
+      image: OneStop
     },
     {
       title: "Library Token",
       description: ["1000+ DAU", "New Feature", "Digitalization of library tokens"],
       tags: ["2 Mentees", "3 Weeks"],
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop"
+      image: LibToken
     },
     {
       title: "No Dues",
@@ -27,7 +31,7 @@ const SWCWork = () => {
       title: "Design System",
       description: ["Increased recognition", "Faster design hand-offs", "20+ portals and websites integration"],
       tags: ["6 Mentees", "4 Months"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop"
+      image: DesignSys
     },
     {
       title: "SA Portal",
