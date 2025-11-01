@@ -1,8 +1,6 @@
-import GlassSurface from '../backgrounds/GlassSurface/GlassSurface';
 import { Link } from 'react-scroll';
 import { useState, useEffect } from 'react';
 import './Navbar.css';
-import { max } from 'three/tsl';
 
 // Custom duration function based on scroll distance
 const getScrollDuration = (targetElement) => {
