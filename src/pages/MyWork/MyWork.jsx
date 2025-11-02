@@ -13,7 +13,47 @@ import { image } from 'framer-motion/client';
 
 const MyWork = () => {
   const projectRefs = useRef([]);
+  const videoRefs = useRef([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.3, // Trigger when 30% of the video is visible
+      rootMargin: '0px'
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        const container = video.closest('.project-image');
+        
+        if (entry.isIntersecting) {
+          // Add active class for fade-in animation
+          container?.classList.add('video-active');
+          // Play video when it comes into view
+          video.play().catch(err => console.log('Video play error:', err));
+        } else {
+          // Remove active class when scrolling out
+          container?.classList.remove('video-active');
+          // Optionally pause video when out of view
+          video.pause();
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all video elements
+    videoRefs.current.forEach((video) => {
+      if (video) observer.observe(video);
+    });
+
+    return () => {
+      videoRefs.current.forEach((video) => {
+        if (video) observer.unobserve(video);
+      });
+    };
+  }, []);
 
   const handleProjectClick = (caseStudyId, externalLink) => {
     if (externalLink) {
@@ -138,7 +178,11 @@ const MyWork = () => {
                 {project.video ? (
                   <>
                     <video 
-                      autoPlay 
+                      ref={(el) => {
+                        if (el && !videoRefs.current.includes(el)) {
+                          videoRefs.current.push(el);
+                        }
+                      }}
                       muted 
                       loop 
                       playsInline
