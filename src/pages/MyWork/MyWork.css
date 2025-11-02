@@ -126,32 +126,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0;
-    transform: scale(1.05);
-    transition: opacity 0.8s ease-out, transform 1.2s ease-out;
-}
-
-.video-active .project-video {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 1;
-    pointer-events: none;
-    z-index: 1;
-    transition: opacity 0.8s ease-out;
-}
-
-.video-active .video-overlay {
-    opacity: 0.15;
 }
 
 .gradient-placeholder {

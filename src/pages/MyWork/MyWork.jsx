@@ -25,17 +25,13 @@ const MyWork = () => {
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         const video = entry.target;
-        const container = video.closest('.project-image');
         
         if (entry.isIntersecting) {
-          // Add active class for fade-in animation
-          container?.classList.add('video-active');
-          // Play video when it comes into view
+          // Reset video to beginning and play when it comes into view
+          video.currentTime = 0;
           video.play().catch(err => console.log('Video play error:', err));
         } else {
-          // Remove active class when scrolling out
-          container?.classList.remove('video-active');
-          // Optionally pause video when out of view
+          // Pause video when out of view
           video.pause();
         }
       });
@@ -176,27 +172,20 @@ const MyWork = () => {
             >
               <div className="project-image">
                 {project.video ? (
-                  <>
-                    <video 
-                      ref={(el) => {
-                        if (el && !videoRefs.current.includes(el)) {
-                          videoRefs.current.push(el);
-                        }
-                      }}
-                      muted 
-                      loop 
-                      playsInline
-                      className="project-video"
-                    >
-                      <source src={project.video} type="video/mp4" />
-                    </video>
-                    {project.image && (
-                      <div 
-                        className="video-overlay"
-                        style={{ backgroundImage: `url(${project.image})` }}
-                      />
-                    )}
-                  </>
+                  <video 
+                    ref={(el) => {
+                      if (el && !videoRefs.current.includes(el)) {
+                        videoRefs.current.push(el);
+                      }
+                    }}
+                    muted 
+                    loop 
+                    playsInline
+                    className="project-video"
+                    poster={project.image}
+                  >
+                    <source src={project.video} type="video/mp4" />
+                  </video>
                 ) : project.image ? (
                   <img src={project.image} alt={project.title} />
                 ) : project.gradient ? (
