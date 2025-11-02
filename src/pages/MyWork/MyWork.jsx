@@ -4,6 +4,7 @@ import StagedThumb from '../../assets/project_thumbs/staged_thumb.jpg';
 import CupidThumb from '../../assets/project_thumbs/cupid_thumb.jpg';
 import HygoThumb from '../../assets/project_thumbs/hygo_thumb.jpg';
 import RarelinkThumb from '../../assets/project_thumbs/rarelink_thumb.jpg';
+import CupidVideo from '../../assets/project_thumbs/vids/cupid.mp4';
 // import RarelinkThumb from '../../assets/project_thumbs/rarelink_thumb.jpg';
 import './MyWork.css';
 import { useEffect, useRef } from 'react';
@@ -49,10 +50,11 @@ const MyWork = () => {
       details: [
         // 'For managers: We build a trustworthy ecosystem where managers can book new artist and venture outside of their known list of artists without trust issues.',
         // 'For Artists: We give them a stage to present themselves, new to the game or old, everyone gets a fair chance.'
-        "Redesigned College Cupid, a campus-only dating app that opens during events like Valentine’s Day and prom to help students connect meaningfully. The initial rushed version saw poor engagement; my redesign improved experience, authenticity, and usability, increasing monthly active users to over 4,000."
+        "Redesigned College Cupid, a campus-only dating app that opens during events like Valentine's Day and prom to help students connect meaningfully. The initial rushed version saw poor engagement; my redesign improved experience, authenticity, and usability, increasing monthly active users to over 4,000."
       ],
       // image: 'https://api.builder.io/api/v1/image/assets/TEMP/d99d94e70887ed052f714946c825424758644ebf?width=1150',
       image: CupidThumb,
+      video: CupidVideo,
       imagePosition: 'right',
       caseStudyId: 'cupid'
     },
@@ -133,7 +135,25 @@ const MyWork = () => {
               onClick={() => handleProjectClick(project.caseStudyId, project.externalLink)}
             >
               <div className="project-image">
-                {project.image ? (
+                {project.video ? (
+                  <>
+                    <video 
+                      autoPlay 
+                      muted 
+                      loop 
+                      playsInline
+                      className="project-video"
+                    >
+                      <source src={project.video} type="video/mp4" />
+                    </video>
+                    {project.image && (
+                      <div 
+                        className="video-overlay"
+                        style={{ backgroundImage: `url(${project.image})` }}
+                      />
+                    )}
+                  </>
+                ) : project.image ? (
                   <img src={project.image} alt={project.title} />
                 ) : project.gradient ? (
                   <div className="gradient-placeholder" style={{ background: project.gradient }}></div>
