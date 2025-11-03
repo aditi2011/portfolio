@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.e562a3e5.css",
-    "main.js": "/portfolio/static/js/main.5f3d6318.js",
+    "main.css": "/portfolio/static/css/main.88dad17d.css",
+    "main.js": "/portfolio/static/js/main.4fc15331.js",
     "static/media/Case Study Template-16.jpg": "/portfolio/static/media/Case Study Template-16.609718659879b472b562.jpg",
     "static/media/p4.png": "/portfolio/static/media/p4.4c6a5a2a491337fbb5b4.png",
     "static/media/Case Study Template-15.jpg": "/portfolio/static/media/Case Study Template-15.3191f60fb17e9630e083.jpg",
@@ -25,6 +25,7 @@
     "static/media/p12.png": "/portfolio/static/media/p12.33986d6cfec5512273d3.png",
     "static/media/Case Study-3.jpg": "/portfolio/static/media/Case Study-3.ea42aa5a6376d9758d31.jpg",
     "static/media/Case Study Template-12.jpg": "/portfolio/static/media/Case Study Template-12.3f51a249442fe6697365.jpg",
+    "static/media/cupid.mp4": "/portfolio/static/media/cupid.35b3221b7243a4207ff8.mp4",
     "static/media/p13.png": "/portfolio/static/media/p13.b7c4bf9645905e528ac9.png",
     "static/media/Case Study Template-14.jpg": "/portfolio/static/media/Case Study Template-14.13bcf96c1fce80eaade4.jpg",
     "static/media/p14.png": "/portfolio/static/media/p14.cc923765febdd37fa7e2.png",
@@ -70,11 +71,11 @@
     "static/media/no_dues.png": "/portfolio/static/media/no_dues.5e4077beba447b0baa9a.png",
     "static/media/lib_token.png": "/portfolio/static/media/lib_token.4af5e04f1bac888c188b.png",
     "index.html": "/portfolio/index.html",
-    "main.e562a3e5.css.map": "/portfolio/static/css/main.e562a3e5.css.map",
-    "main.5f3d6318.js.map": "/portfolio/static/js/main.5f3d6318.js.map"
+    "main.88dad17d.css.map": "/portfolio/static/css/main.88dad17d.css.map",
+    "main.4fc15331.js.map": "/portfolio/static/js/main.4fc15331.js.map"
   },
   "entrypoints": [
-    "static/css/main.e562a3e5.css",
-    "static/js/main.5f3d6318.js"
+    "static/css/main.88dad17d.css",
+    "static/js/main.4fc15331.js"
   ]
 }
