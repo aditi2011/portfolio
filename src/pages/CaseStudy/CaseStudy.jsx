@@ -61,6 +61,7 @@ import stagedP15 from '../../assets/case_studies/staged_1.5x/Case Study-14.jpg';
 import stagedP16 from '../../assets/case_studies/staged_1.5x/Case Study-15.jpg';
 import stagedP17 from '../../assets/case_studies/staged_1.5x/Case Study-16.jpg';
 import stagedP18 from '../../assets/case_studies/staged_1.5x/Case Study-17.jpg';
+import stagedP19 from '../../assets/case_studies/staged_1.5x/Case Study-18.jpg';
 
 // Case study data mapping
 const caseStudies = {
@@ -202,8 +203,8 @@ const caseStudies = {
           { src: stagedP5, alt: 'Staged Page 5' },
           { src: stagedP6, alt: 'Staged Page 6' },
           { src: stagedP7, alt: 'Staged Page 7' },
-          { src: stagedP8, alt: 'Staged Page 8' },
-          { src: stagedP9, alt: 'Staged Page 9' },
+          // { src: stagedP8, alt: 'Staged Page 8' },
+          // { src: stagedP9, alt: 'Staged Page 9' },
           // { src: stagedP10, alt: 'Staged Page 10' },
           // { src: stagedP11, alt: 'Staged Page 11' },
         ]
@@ -212,24 +213,37 @@ const caseStudies = {
         id: 10,
         title: 'User Research',
         images: [
+          { src: stagedP8, alt: 'Staged Page 8' },
+          { src: stagedP9, alt: 'Staged Page 9' },
+          // { src: stagedP10, alt: 'Staged Page 10' },
+          // { src: stagedP11, alt: 'Staged Page 11' },
+        ]
+      },
+      {
+        id: 11,
+        title: 'Problem Definition',
+        // images: [
+        //   { src: stagedP19, alt: 'Staged Page 19' },
+        // ]
+        images: [
           { src: stagedP10, alt: 'Staged Page 10' },
           { src: stagedP11, alt: 'Staged Page 11' },
+          { src: stagedP12, alt: 'Staged Page 12' },
+          { src: stagedP13, alt: 'Staged Page 13' },
         ]
       },
       {
         id: 12,
         title: 'Ideation',
         images: [
-          { src: stagedP12, alt: 'Staged Page 12' },
-          { src: stagedP13, alt: 'Staged Page 13' },
           { src: stagedP14, alt: 'Staged Page 14' },
+          { src: stagedP15, alt: 'Staged Page 15' },
         ]
       },
       {
         id: 15,
         title: 'Screens',
         images: [
-          { src: stagedP15, alt: 'Staged Page 15' },
           { src: stagedP16, alt: 'Staged Page 16' },
           { src: stagedP17, alt: 'Staged Page 17' },
           { src: stagedP18, alt: 'Staged Page 18' },
