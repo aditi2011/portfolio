@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.1ad87bf2.css",
+    "main.css": "/portfolio/static/css/main.64893ab0.css",
     "main.js": "/portfolio/static/js/main.9c2c38a3.js",
     "static/media/Case Study Template-16.jpg": "/portfolio/static/media/Case Study Template-16.609718659879b472b562.jpg",
     "static/media/p4.png": "/portfolio/static/media/p4.4c6a5a2a491337fbb5b4.png",
@@ -72,11 +72,11 @@
     "static/media/no_dues.png": "/portfolio/static/media/no_dues.5e4077beba447b0baa9a.png",
     "static/media/lib_token.png": "/portfolio/static/media/lib_token.4af5e04f1bac888c188b.png",
     "index.html": "/portfolio/index.html",
-    "main.1ad87bf2.css.map": "/portfolio/static/css/main.1ad87bf2.css.map",
+    "main.64893ab0.css.map": "/portfolio/static/css/main.64893ab0.css.map",
     "main.9c2c38a3.js.map": "/portfolio/static/js/main.9c2c38a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ad87bf2.css",
+    "static/css/main.64893ab0.css",
     "static/js/main.9c2c38a3.js"
   ]
 }
