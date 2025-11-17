@@ -66,6 +66,16 @@
   color: var(--fg);
 }
 
+@media (min-width: 767px) {
+  .hero-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-50%);
+  }
+}
+
 .hero-title {
   margin: 0 0 0rem 0;
   /* font-size: var(--header-title-size-mobile); */
@@ -103,6 +113,8 @@
   
   .hero-title {
     font-size: 3rem;
+    line-height: 1;
+    margin: 0 0 1rem 0;
   }
   
   .hero-subtitle {

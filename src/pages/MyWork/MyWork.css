@@ -304,6 +304,7 @@
     .project-card.reverse .project-content {
         grid-column: unset;
         grid-row: unset;
+        gap: 1rem;
     }
 
     .mentor-grid {
@@ -407,7 +408,7 @@
     }
 
     .project-content {
-        gap: 1.5rem;
+        gap: 0.25rem;
     }
 
     .project-header h3 {

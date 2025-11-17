@@ -34,7 +34,7 @@ export function HeroParallax({ products }) {
   const translateX = useSpring(useTransform(scrollYProgress, [0, 1], [0, 1000]), springConfig)
   const translateXReverse = useSpring(useTransform(scrollYProgress, [0, 1], [0, -1000]), springConfig)
   const rotateX = useSpring(useTransform(scrollYProgress, [0, 0.2], [15, 0]), springConfig)
-  const opacity = useSpring(useTransform(scrollYProgress, [0, 0.4], [0.1, 1]), springConfig)
+  const opacity = useSpring(useTransform(scrollYProgress, [0, 0.4], [0.05, 1]), springConfig)
   const rotateZ = useSpring(useTransform(scrollYProgress, [0, 0.2], [20, 0]), springConfig)
   const translateY = useSpring(
     useTransform(scrollYProgress, [0, 0.2], isMobile ? [-300, 200] : isTablet ? [-500, 0] : [-750, 0]),
